@@ -1,0 +1,6 @@
+- 👋 Hi, I’m @musaJawad004
+- 👀 I’m interested in Python
+- 🌱 I’m Working on an project
+- 💞️ I’m looking to collaborate on Python
+- 📫 How to reach me email musaJawad004@gmail.com
+- ⚡ Fun fact I love coding
