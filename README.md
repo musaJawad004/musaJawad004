@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @musaJawad004
+- 👋 Hi, I’m Musa
 - 👀 I’m interested in Fluuter
 - 🌱 I’m working on a project
 - 💞️ I’m looking to collaborate on Flutter and Python
