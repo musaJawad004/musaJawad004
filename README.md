@@ -1,5 +1,5 @@
 # :dizzy: About Me:
-I’m a passionate coder :computer:<br>I love building with code :heart_on_fire:<br>I’m a full-stack developer :rocket:<br>I create AI-powered mobile apps :robot_face::iphone:<br>I enjoy solving real-world problems :brain::zap:
+I’m a passionate coder :computer:<br>I love building with code :heart_on_fire:<br>I’m a full-stack developer :rocket:<br>I create AI-powered mobile apps :iphone:<br>I enjoy solving real-world problems :brain::zap:
 
 
 ## :globe_with_meridians: Connect With Me:
