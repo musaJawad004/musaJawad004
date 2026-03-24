@@ -2,9 +2,7 @@
 I’m a passionate coder 💻<br>I love building with code ❤️‍🔥<br>I’m a full-stack developer 🚀<br>I create AI-powered mobile apps 🤖📱<br>I enjoy solving real-world problems 🧠⚡
 
 
-## 🌐 Socials:
 ## 🌐 Connect With Me:
-
 [![Email](https://img.shields.io/badge/Email-musajawad004%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:musajawad004@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-musaJawad004-181717?style=for-the-badge&logo=github)](https://github.com/musaJawad004)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Coming_Soon-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](#)
