@@ -4,7 +4,7 @@ I’m a passionate coder :computer:<br>I love building with code :heart_on_fire:
 
 ## 🌐 Connect With Me:
 
-[![Email](https://img.shields.io/badge/Email-muhammad-musa40glixentech.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muhammad-musa@glixentech.com)
+![Email](https://img.shields.io/badge/Email-musajawad004%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muhammad-musa@glixentech.com)
 [![GitHub](https://img.shields.io/badge/GitHub-musaJawad004-181717?style=for-the-badge&logo=github)](https://github.com/musaJawad004)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Musa%20Builds-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://musabuilds.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Muhammad%20Musa-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadmusadev/)
