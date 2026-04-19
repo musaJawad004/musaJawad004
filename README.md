@@ -1,4 +1,3 @@
-
 ## 🌐 Connect With Me:
 
 [![Email](https://img.shields.io/badge/Email-muhammad--musa%40glixentech.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muhammad-musa@glixentech.com)
@@ -13,10 +12,21 @@
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)<br>
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Dribbble](https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white)
 
-## :bar_chart: GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=musaJawad004&theme=dark&hide_border=false&include_all_commits=true&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=musaJawad004&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=musaJawad004&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
+## 📊 GitHub Stats
+
+<div align="center">
+
+<a href="https://github.com/musaJawad004">
+  <img src="https://streak-stats.demolab.com?user=musaJawad004&theme=github-dark-blue&hide_border=true" width="600" alt="GitHub Streak"/>
+</a>
+
+<br/><br/>
+
+<a href="https://github.com/musaJawad004">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=musaJawad004&theme=github-compact&hide_border=true&area=true" width="600" alt="Activity Graph"/>
+</a>
+
+</div>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=musaJawad004&icon=0&color=1)](https://visitcount.itsvg.in)
