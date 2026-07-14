@@ -32,6 +32,13 @@ AI App Developer · Flutter & React Native · LLMs, AI Agents & Full Stack
 - 🗄️ Strong backend foundations in **Firebase**, **PostgreSQL**, **MySQL** & **API development** for data-driven apps
 - 🎯 **Mission:** bridging the gap between **AI/LLM capabilities** and seamless mobile experiences users love
 
+## ~/now
+
+- 🔭 Building **next-gen AI-powered mobile apps** at **Glixen Technologies**
+- 🦙 Fine-tuning and training **LLMs** with **RunPod** & **Ollama** for production
+- 🤖 Putting **AI Agents** inside **React Native** & **Flutter** apps
+- 🌱 Leveling up in **LLM orchestration** & **full-stack AI architecture**
+
 <img src="./musa-heatmap.svg" width="860" alt="Muhammad Musa's GitHub contribution graph — auto-refreshed daily" />
 
 ---
