@@ -56,11 +56,11 @@ INFO = [
     ("Design",   "Figma · Dribbble", "val"),
     ("__blank__", "", ""),
     ("__section__", "~/projects", ""),
-    ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "purple"),
+    ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "cyan"),
     ("__gap__", "", ""),
-    ("AI Studio", "Full-stack AI app experiments · TypeScript", "purple"),
+    ("AI Studio", "Full-stack AI app experiments · TypeScript", "cyan"),
     ("__gap__", "", ""),
-    ("TODO List", "Clean & simple task manager · Web", "purple"),
+    ("TODO List", "Clean & simple task manager · Web", "cyan"),
     ("__blank__", "", ""),
     ("__section__", "~/github", ""),
     ("__stats__", "", ""),
@@ -77,13 +77,13 @@ THEMES = {
     "dark": {
         "bg": "#0d1117", "panel": "#161b22", "border": "#30363d",
         "text": "#c9d1d9", "muted": "#8b949e", "key": "#3fb950",
-        "accent": "#58a6ff", "warn": "#d29922", "art": "#bc8cff",
+        "accent": "#58a6ff", "warn": "#d29922", "art": "#bc8cff", "cyan": "#39c5cf",
         "prompt": "#3fb950", "dot1": "#ff5f56", "dot2": "#ffbd2e", "dot3": "#27c93f",
     },
     "light": {
         "bg": "#ffffff", "panel": "#f6f8fa", "border": "#d0d7de",
         "text": "#1f2328", "muted": "#59636e", "key": "#1a7f37",
-        "accent": "#0969da", "warn": "#9a6700", "art": "#8250df",
+        "accent": "#0969da", "warn": "#9a6700", "art": "#8250df", "cyan": "#1b7c83",
         "prompt": "#1a7f37", "dot1": "#ff5f56", "dot2": "#ffbd2e", "dot3": "#27c93f",
     },
 }
@@ -149,7 +149,7 @@ def render(theme_name, colors, stats, ist_now):
     .val  {{ fill:{colors['text']}; font-size:13px; }}
     .acc  {{ fill:{colors['accent']}; font-size:13px; }}
     .wrn  {{ fill:{colors['warn']}; font-size:13px; }}
-    .pur  {{ fill:{colors['art']}; font-size:13px; }}
+    .cyn  {{ fill:{colors['cyan']}; font-size:13px; }}
     .mut  {{ fill:{colors['muted']}; font-size:12px; }}
     .hdr  {{ fill:{colors['accent']}; font-size:15px; font-weight:700; }}
     .sec  {{ fill:{colors['muted']}; font-size:12px; letter-spacing:1px; }}
@@ -203,7 +203,7 @@ def render(theme_name, colors, stats, ist_now):
     # info block
     y = INFO_Y
     delay = 0.35
-    cls_map = {"val": "val", "accent": "acc", "warn": "wrn", "muted": "mut", "purple": "pur"}
+    cls_map = {"val": "val", "accent": "acc", "warn": "wrn", "muted": "mut", "cyan": "cyn"}
 
     for label, value, ckey in INFO:
         d = f'style="animation-delay:{delay:.2f}s"'

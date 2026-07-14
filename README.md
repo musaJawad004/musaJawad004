@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/light.svg?v=2">
-  <img alt="Muhammad Musa — Full-Stack & Mobile Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/dark.svg?v=2">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/dark.svg?v=3">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/light.svg?v=3">
+  <img alt="Muhammad Musa — Full-Stack & Mobile Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/dark.svg?v=3">
 </picture>
 
 # Muhammad Musa
