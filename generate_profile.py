@@ -30,19 +30,20 @@ def load_portrait():
 
 # (label, value, colour-key)  |  colour-key: key / val / accent / warn / muted
 INFO = [
-    ("__header__", "muhammad musa", ""),
+    ("__header__", "Muhammad Musa", ""),
     ("__rule__", "", ""),
-    ("Role",     "Full-Stack Developer @ Glixen", "val"),
-    ("Bio",      "Coder building full-stack AI apps", "val"),
-    ("Focus",    "Mobile & Web  ·  Full-Stack  ·  AI Apps", "accent"),
+    ("Role",     "AI App Developer | Flutter & React Native", "val"),
+    ("",         "LLMs, AI Agents & Full Stack", "accent"),
     ("__blank__", "", ""),
     ("__section__", "~/stack", ""),
-    ("Lang",     "Dart · JavaScript · TypeScript · Markdown", "val"),
-    ("Mobile",   "Flutter · React Native", "val"),
-    ("Backend",  "Node.js · Express.js · Nodemon · JWT", "val"),
-    ("Data",     "PostgreSQL · MySQL · SQLite", "val"),
-    ("Infra",    "DigitalOcean · Apache · Git · GitHub · Terminal", "val"),
-    ("Design",   "Figma · Dribbble", "val"),
+    ("Lang",     "TypeScript · JavaScript · Dart · Python", "val"),
+    ("Mobile",   "Flutter · React Native · Expo", "val"),
+    ("Backend",  "Node.js · Express · JWT · npm · Firebase", "val"),
+    ("AI",       "OpenAI · Claude · Gemini · Ollama · LangChain", "val"),
+    ("",         "Hugging Face · RunPod · AI Studio · Copilot", "muted"),
+    ("Data",     "PostgreSQL · MySQL · SQLite · Supabase", "val"),
+    ("Infra",    "Docker · Vercel · Railway · Render · DigitalOcean", "val"),
+    ("Tools",    "Git · GitHub Actions · Postman · Apache · Figma", "val"),
     ("__blank__", "", ""),
     ("__section__", "~/projects", ""),
     ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "warn"),
@@ -73,7 +74,7 @@ THEMES = {
     },
 }
 
-W, H = 980, 590
+W, H = 980, 600
 ART_X, ART_Y = 30, 86
 ART_CW = 3.9          # forced char width (textLength keeps this exact in any font)
 ART_LH = ART_CW * 1.72
@@ -233,7 +234,7 @@ def render(theme_name, colors, stats, ist_now):
         f'<text x="{ART_X}" y="{fy}" class="row" style="animation-delay:{delay+0.1:.2f}s">'
         f'<tspan class="key">➜</tspan>'
         f'<tspan class="acc" dx="8">~</tspan>'
-        f'<tspan class="val" dx="8">open to Full-Stack / Mobile Developer roles</tspan>'
+        f'<tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan>'
         f'<tspan class="cur" dx="8">█</tspan></text>'
     )
     parts.append(

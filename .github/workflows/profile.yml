@@ -2,13 +2,14 @@ name: Refresh profile card
 
 on:
   schedule:
-    - cron: "30 2 * * *"   # daily, 07:30 PKT
+    - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - generate_profile.py
       - portrait.txt
+      - scripts/**
 
 permissions:
   contents: write
@@ -23,15 +24,24 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate SVGs
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Regenerate profile card SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python generate_profile.py
+
+      - name: Scrape contribution data (no auth needed)
+        run: python scripts/fetch_contributions.py
+
+      - name: Render contribution heatmap SVG
+        run: python scripts/render_heatmap_svg.py
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dark.svg light.svg
-          git diff --cached --quiet || git commit -m "chore: refresh profile card"
+          git add dark.svg light.svg musa-heatmap.svg data/contributions.json
+          git diff --cached --quiet || git commit -m "chore: refresh profile card [skip ci]"
           git push
