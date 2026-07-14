@@ -8,7 +8,12 @@
 
 # Muhammad Musa
 
-AI App Developer | Flutter & React Native | LLMs, AI Agents & Full Stack
+AI App Developer · Flutter & React Native · LLMs, AI Agents & Full Stack
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-musadev.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=white)](https://musadev.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-musaJawad004-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/musaJawad004)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammadmusadev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadmusadev/)
+[![Email](https://img.shields.io/badge/Email-musaJawad004%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:musaJawad004@gmail.com)
 
 </div>
 
@@ -17,13 +22,6 @@ AI App Developer | Flutter & React Native | LLMs, AI Agents & Full Stack
   .github/workflows/profile.yml. Edit CONFIG / ASCII_ART / INFO in the script,
   never the .svg files directly.
 -->
-
-## 🌐 Connect With Me:
-
-[![Email](https://img.shields.io/badge/Email-musaJawad004%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:musaJawad004@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-musaJawad004-181717?style=for-the-badge&logo=github)](https://github.com/musaJawad004)
-[![Portfolio](https://img.shields.io/badge/Portfolio-musadev.vercel.app-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://musadev.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Muhammad%20Musa-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadmusadev/)
 
 <img src="./musa-heatmap.svg" width="860" alt="Muhammad Musa's GitHub contribution graph — auto-refreshed daily" />
 

@@ -171,7 +171,7 @@ def render(theme_name, colors, stats, ist_now):
         f'<text x="{ART_X}" y="66" class="row" style="animation-delay:.05s">'
         f'<tspan class="key">➜</tspan>'
         f'<tspan class="acc" dx="8">~</tspan>'
-        f'<tspan class="val" dx="8">neofetch --profile</tspan></text>'
+        f'<tspan class="val" dx="8">musafetch --profile</tspan></text>'
     )
 
     # ascii art
