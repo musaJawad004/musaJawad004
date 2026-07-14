@@ -36,14 +36,16 @@ INFO = [
     ("",         "LLMs, AI Agents & Full Stack", "accent"),
     ("__blank__", "", ""),
     ("__section__", "~/stack", ""),
-    ("Lang",     "TypeScript · JavaScript · Dart · Python", "val"),
+    ("Lang",     "TypeScript · JavaScript · Dart · Python · Markdown", "val"),
     ("Mobile",   "Flutter · React Native · Expo", "val"),
-    ("Backend",  "Node.js · Express · JWT · npm · Firebase", "val"),
+    ("Backend",  "Node.js · Express · Nodemon · JWT · npm · Firebase", "val"),
     ("AI",       "OpenAI · Claude · Gemini · Ollama · LangChain", "val"),
     ("",         "Hugging Face · RunPod · AI Studio · Copilot", "muted"),
     ("Data",     "PostgreSQL · MySQL · SQLite · Supabase", "val"),
     ("Infra",    "Docker · Vercel · Railway · Render · DigitalOcean", "val"),
-    ("Tools",    "Git · GitHub Actions · Postman · Apache · Figma", "val"),
+    ("Tools",    "Git · GitHub Actions · Postman · Apache", "val"),
+    ("IDE",      "Android Studio · Xcode · Cursor · Windows 11", "val"),
+    ("Design",   "Figma · Dribbble", "val"),
     ("__blank__", "", ""),
     ("__section__", "~/projects", ""),
     ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "warn"),
@@ -74,7 +76,7 @@ THEMES = {
     },
 }
 
-W, H = 980, 600
+W, H = 980, 635
 ART_X, ART_Y = 30, 86
 ART_CW = 3.9          # forced char width (textLength keeps this exact in any font)
 ART_LH = ART_CW * 1.72
