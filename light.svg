@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="980" height="635" viewBox="0 0 980 635" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace">
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="685" viewBox="0 0 980 685" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace">
 <style>
     .art  { fill:#8250df; font-size:6.2px; white-space:pre; }
     .key  { fill:#1a7f37; font-size:13px; font-weight:700; }
@@ -16,7 +16,7 @@
     @keyframes blink { 50% { opacity:0; } }
     .artline { opacity:1; animation: fade .3s ease backwards; }
     </style>
-<rect x="1" y="1" width="978" height="633" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<rect x="1" y="1" width="978" height="683" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
 <path d="M1 13 a12 12 0 0 1 12 -12 h954 a12 12 0 0 1 12 12 v25 h-978 z" fill="#f6f8fa"/>
 <line x1="1" y1="38" x2="979" y2="38" stroke="#d0d7de"/>
 <circle cx="24" cy="20" r="6" fill="#ff5f56"/>
@@ -97,39 +97,39 @@
 <text x="448" y="162.5" class="sec row" style="animation-delay:0.63s">~/stack</text>
 <text x="448" y="180.0" class="key row" style="animation-delay:0.70s">Lang</text>
 <text x="540" y="180.0" class="val row" style="animation-delay:0.70s">TypeScript · JavaScript · Dart · Python · Markdown</text>
-<text x="448" y="197.5" class="key row" style="animation-delay:0.77s">Mobile</text>
-<text x="540" y="197.5" class="val row" style="animation-delay:0.77s">Flutter · React Native · Expo</text>
-<text x="448" y="215.0" class="key row" style="animation-delay:0.84s">Backend</text>
-<text x="540" y="215.0" class="val row" style="animation-delay:0.84s">Node.js · Express · Nodemon · JWT · npm · Firebase</text>
-<text x="448" y="232.5" class="key row" style="animation-delay:0.91s">AI</text>
-<text x="540" y="232.5" class="val row" style="animation-delay:0.91s">OpenAI · Claude · Gemini · Ollama · LangChain</text>
-<text x="540" y="250.0" class="mut row" style="animation-delay:0.98s">Hugging Face · RunPod · AI Studio · Copilot</text>
-<text x="448" y="267.5" class="key row" style="animation-delay:1.05s">Data</text>
-<text x="540" y="267.5" class="val row" style="animation-delay:1.05s">PostgreSQL · MySQL · SQLite · Supabase</text>
-<text x="448" y="285.0" class="key row" style="animation-delay:1.12s">Infra</text>
-<text x="540" y="285.0" class="val row" style="animation-delay:1.12s">Docker · Vercel · Railway · Render · DigitalOcean</text>
-<text x="448" y="302.5" class="key row" style="animation-delay:1.19s">Tools</text>
-<text x="540" y="302.5" class="val row" style="animation-delay:1.19s">Git · GitHub Actions · Postman · Apache</text>
-<text x="448" y="320.0" class="key row" style="animation-delay:1.26s">IDE</text>
-<text x="540" y="320.0" class="val row" style="animation-delay:1.26s">Android Studio · Xcode · Cursor · Windows 11</text>
-<text x="448" y="337.5" class="key row" style="animation-delay:1.33s">Design</text>
-<text x="540" y="337.5" class="val row" style="animation-delay:1.33s">Figma · Dribbble</text>
-<text x="448" y="365.0" class="sec row" style="animation-delay:1.40s">~/projects</text>
-<text x="448" y="382.5" class="key row" style="animation-delay:1.47s">Spottro</text>
-<text x="540" y="382.5" class="wrn row" style="animation-delay:1.47s">Cross-platform mobile app · Flutter / Dart</text>
-<text x="448" y="400.0" class="key row" style="animation-delay:1.54s">AI Studio</text>
-<text x="540" y="400.0" class="wrn row" style="animation-delay:1.54s">Full-stack AI app experiments · TypeScript</text>
-<text x="448" y="417.5" class="key row" style="animation-delay:1.61s">TODO List</text>
-<text x="540" y="417.5" class="wrn row" style="animation-delay:1.61s">Clean &amp; simple task manager · Web</text>
-<text x="448" y="445.0" class="sec row" style="animation-delay:1.68s">~/github</text>
-<text x="448" y="462.5" class="row" style="animation-delay:1.75s"><tspan class="key">⚡</tspan><tspan class="val" dx="8">repos 4   ·   stars 32   ·   followers 10</tspan></text>
-<text x="448" y="490.0" class="sec row" style="animation-delay:1.82s">~/reach</text>
-<text x="448" y="507.5" class="key row" style="animation-delay:1.89s">Web</text>
-<text x="540" y="507.5" class="acc row" style="animation-delay:1.89s">musadev.vercel.app</text>
-<text x="448" y="525.0" class="key row" style="animation-delay:1.96s">In</text>
-<text x="540" y="525.0" class="acc row" style="animation-delay:1.96s">linkedin.com/in/muhammadmusadev</text>
-<text x="448" y="542.5" class="key row" style="animation-delay:2.03s">Mail</text>
-<text x="540" y="542.5" class="acc row" style="animation-delay:2.03s">musaJawad004@gmail.com</text>
-<text x="30" y="611" class="row" style="animation-delay:2.20s"><tspan class="key">➜</tspan><tspan class="acc" dx="8">~</tspan><tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan><tspan class="cur" dx="8">█</tspan></text>
-<text x="946" y="611" class="mut" text-anchor="end">last updated 14 Jul 2026, 18:44 PKT</text>
+<text x="448" y="203.5" class="key row" style="animation-delay:0.77s">Mobile</text>
+<text x="540" y="203.5" class="val row" style="animation-delay:0.77s">Flutter · React Native · Expo</text>
+<text x="448" y="227.0" class="key row" style="animation-delay:0.84s">Backend</text>
+<text x="540" y="227.0" class="val row" style="animation-delay:0.84s">Node.js · Express · Nodemon · JWT · npm · Firebase</text>
+<text x="448" y="250.5" class="key row" style="animation-delay:0.91s">AI</text>
+<text x="540" y="250.5" class="val row" style="animation-delay:0.91s">OpenAI · Claude · Gemini · Ollama · LangChain</text>
+<text x="540" y="268.0" class="mut row" style="animation-delay:0.98s">Hugging Face · RunPod · AI Studio · Copilot</text>
+<text x="448" y="291.5" class="key row" style="animation-delay:1.05s">Data</text>
+<text x="540" y="291.5" class="val row" style="animation-delay:1.05s">PostgreSQL · MySQL · SQLite · Supabase</text>
+<text x="448" y="315.0" class="key row" style="animation-delay:1.12s">Infra</text>
+<text x="540" y="315.0" class="val row" style="animation-delay:1.12s">Docker · Vercel · Railway · Render · DigitalOcean</text>
+<text x="448" y="338.5" class="key row" style="animation-delay:1.19s">Tools</text>
+<text x="540" y="338.5" class="val row" style="animation-delay:1.19s">Git · GitHub Actions · Postman · Apache</text>
+<text x="448" y="362.0" class="key row" style="animation-delay:1.26s">IDE</text>
+<text x="540" y="362.0" class="val row" style="animation-delay:1.26s">Android Studio · Xcode · Cursor · Windows 11</text>
+<text x="448" y="385.5" class="key row" style="animation-delay:1.33s">Design</text>
+<text x="540" y="385.5" class="val row" style="animation-delay:1.33s">Figma · Dribbble</text>
+<text x="448" y="413.0" class="sec row" style="animation-delay:1.40s">~/projects</text>
+<text x="448" y="430.5" class="key row" style="animation-delay:1.47s">Spottro</text>
+<text x="540" y="430.5" class="wrn row" style="animation-delay:1.47s">Cross-platform mobile app · Flutter / Dart</text>
+<text x="448" y="448.0" class="key row" style="animation-delay:1.54s">AI Studio</text>
+<text x="540" y="448.0" class="wrn row" style="animation-delay:1.54s">Full-stack AI app experiments · TypeScript</text>
+<text x="448" y="465.5" class="key row" style="animation-delay:1.61s">TODO List</text>
+<text x="540" y="465.5" class="wrn row" style="animation-delay:1.61s">Clean &amp; simple task manager · Web</text>
+<text x="448" y="493.0" class="sec row" style="animation-delay:1.68s">~/github</text>
+<text x="448" y="510.5" class="row" style="animation-delay:1.75s"><tspan class="key">⚡</tspan><tspan class="val" dx="8">repos 4   ·   stars 32   ·   followers 10</tspan></text>
+<text x="448" y="538.0" class="sec row" style="animation-delay:1.82s">~/reach</text>
+<text x="448" y="555.5" class="key row" style="animation-delay:1.89s">Web</text>
+<text x="540" y="555.5" class="acc row" style="animation-delay:1.89s">musadev.vercel.app</text>
+<text x="448" y="573.0" class="key row" style="animation-delay:1.96s">In</text>
+<text x="540" y="573.0" class="acc row" style="animation-delay:1.96s">linkedin.com/in/muhammadmusadev</text>
+<text x="448" y="590.5" class="key row" style="animation-delay:2.03s">Mail</text>
+<text x="540" y="590.5" class="acc row" style="animation-delay:2.03s">musaJawad004@gmail.com</text>
+<text x="30" y="661" class="row" style="animation-delay:2.20s"><tspan class="key">➜</tspan><tspan class="acc" dx="8">~</tspan><tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan><tspan class="cur" dx="8">█</tspan></text>
+<text x="946" y="661" class="mut" text-anchor="end">last updated 14 Jul 2026, 18:49 PKT</text>
 </svg>

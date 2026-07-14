@@ -10,10 +10,10 @@
 
 AI App Developer · Flutter & React Native · LLMs, AI Agents & Full Stack
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-musadev.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=white)](https://musadev.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-musaJawad004-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/musaJawad004)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammadmusadev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadmusadev/)
-[![Email](https://img.shields.io/badge/Email-musaJawad004%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:musaJawad004@gmail.com)
+[![Portfolio](https://img.shields.io/badge/~%2Fportfolio-musadev.vercel.app-3fb950?style=for-the-badge&labelColor=161b22&logo=vercel&logoColor=white)](https://musadev.vercel.app/)
+[![GitHub](https://img.shields.io/badge/~%2Fgithub-musaJawad004-bc8cff?style=for-the-badge&labelColor=161b22&logo=github&logoColor=white)](https://github.com/musaJawad004)
+[![LinkedIn](https://img.shields.io/badge/~%2Flinkedin-muhammadmusadev-58a6ff?style=for-the-badge&labelColor=161b22&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadmusadev/)
+[![Email](https://img.shields.io/badge/~%2Fmail-musaJawad004%40gmail.com-d29922?style=for-the-badge&labelColor=161b22&logo=gmail&logoColor=white)](mailto:musaJawad004@gmail.com)
 
 </div>
 

@@ -37,14 +37,22 @@ INFO = [
     ("__blank__", "", ""),
     ("__section__", "~/stack", ""),
     ("Lang",     "TypeScript · JavaScript · Dart · Python · Markdown", "val"),
+    ("__gap__", "", ""),
     ("Mobile",   "Flutter · React Native · Expo", "val"),
+    ("__gap__", "", ""),
     ("Backend",  "Node.js · Express · Nodemon · JWT · npm · Firebase", "val"),
+    ("__gap__", "", ""),
     ("AI",       "OpenAI · Claude · Gemini · Ollama · LangChain", "val"),
     ("",         "Hugging Face · RunPod · AI Studio · Copilot", "muted"),
+    ("__gap__", "", ""),
     ("Data",     "PostgreSQL · MySQL · SQLite · Supabase", "val"),
+    ("__gap__", "", ""),
     ("Infra",    "Docker · Vercel · Railway · Render · DigitalOcean", "val"),
+    ("__gap__", "", ""),
     ("Tools",    "Git · GitHub Actions · Postman · Apache", "val"),
+    ("__gap__", "", ""),
     ("IDE",      "Android Studio · Xcode · Cursor · Windows 11", "val"),
+    ("__gap__", "", ""),
     ("Design",   "Figma · Dribbble", "val"),
     ("__blank__", "", ""),
     ("__section__", "~/projects", ""),
@@ -76,7 +84,7 @@ THEMES = {
     },
 }
 
-W, H = 980, 635
+W, H = 980, 685
 ART_X, ART_Y = 30, 86
 ART_CW = 3.9          # forced char width (textLength keeps this exact in any font)
 ART_LH = ART_CW * 1.72
@@ -205,6 +213,9 @@ def render(theme_name, colors, stats, ist_now):
             y += 8
         elif label == "__blank__":
             y += 10
+            continue
+        elif label == "__gap__":
+            y += 6
             continue
         elif label == "__section__":
             parts.append(f'<text x="{INFO_X}" y="{y:.1f}" class="sec row" {d}>{escape(value)}</text>')
