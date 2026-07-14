@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="980" height="685" viewBox="0 0 980 685" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace">
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="710" viewBox="0 0 980 710" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace">
 <style>
     .art  { fill:#8250df; font-size:6.2px; white-space:pre; }
     .key  { fill:#1a7f37; font-size:13px; font-weight:700; }
     .val  { fill:#1f2328; font-size:13px; }
     .acc  { fill:#0969da; font-size:13px; }
     .wrn  { fill:#9a6700; font-size:13px; }
+    .pur  { fill:#8250df; font-size:13px; }
     .mut  { fill:#59636e; font-size:12px; }
     .hdr  { fill:#0969da; font-size:15px; font-weight:700; }
     .sec  { fill:#59636e; font-size:12px; letter-spacing:1px; }
@@ -16,7 +17,7 @@
     @keyframes blink { 50% { opacity:0; } }
     .artline { opacity:1; animation: fade .3s ease backwards; }
     </style>
-<rect x="1" y="1" width="978" height="683" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<rect x="1" y="1" width="978" height="708" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
 <path d="M1 13 a12 12 0 0 1 12 -12 h954 a12 12 0 0 1 12 12 v25 h-978 z" fill="#f6f8fa"/>
 <line x1="1" y1="38" x2="979" y2="38" stroke="#d0d7de"/>
 <circle cx="24" cy="20" r="6" fill="#ff5f56"/>
@@ -116,20 +117,20 @@
 <text x="540" y="385.5" class="val row" style="animation-delay:1.33s">Figma · Dribbble</text>
 <text x="448" y="413.0" class="sec row" style="animation-delay:1.40s">~/projects</text>
 <text x="448" y="430.5" class="key row" style="animation-delay:1.47s">Spottro</text>
-<text x="540" y="430.5" class="wrn row" style="animation-delay:1.47s">Cross-platform mobile app · Flutter / Dart</text>
-<text x="448" y="448.0" class="key row" style="animation-delay:1.54s">AI Studio</text>
-<text x="540" y="448.0" class="wrn row" style="animation-delay:1.54s">Full-stack AI app experiments · TypeScript</text>
-<text x="448" y="465.5" class="key row" style="animation-delay:1.61s">TODO List</text>
-<text x="540" y="465.5" class="wrn row" style="animation-delay:1.61s">Clean &amp; simple task manager · Web</text>
-<text x="448" y="493.0" class="sec row" style="animation-delay:1.68s">~/github</text>
-<text x="448" y="510.5" class="row" style="animation-delay:1.75s"><tspan class="key">⚡</tspan><tspan class="val" dx="8">repos 4   ·   stars 32   ·   followers 10</tspan></text>
-<text x="448" y="538.0" class="sec row" style="animation-delay:1.82s">~/reach</text>
-<text x="448" y="555.5" class="key row" style="animation-delay:1.89s">Web</text>
-<text x="540" y="555.5" class="acc row" style="animation-delay:1.89s">musadev.vercel.app</text>
-<text x="448" y="573.0" class="key row" style="animation-delay:1.96s">In</text>
-<text x="540" y="573.0" class="acc row" style="animation-delay:1.96s">linkedin.com/in/muhammadmusadev</text>
-<text x="448" y="590.5" class="key row" style="animation-delay:2.03s">Mail</text>
-<text x="540" y="590.5" class="acc row" style="animation-delay:2.03s">musaJawad004@gmail.com</text>
-<text x="30" y="661" class="row" style="animation-delay:2.20s"><tspan class="key">➜</tspan><tspan class="acc" dx="8">~</tspan><tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan><tspan class="cur" dx="8">█</tspan></text>
-<text x="946" y="661" class="mut" text-anchor="end">last updated 14 Jul 2026, 18:50 PKT</text>
+<text x="540" y="430.5" class="pur row" style="animation-delay:1.47s">Cross-platform mobile app · Flutter / Dart</text>
+<text x="448" y="454.0" class="key row" style="animation-delay:1.54s">AI Studio</text>
+<text x="540" y="454.0" class="pur row" style="animation-delay:1.54s">Full-stack AI app experiments · TypeScript</text>
+<text x="448" y="477.5" class="key row" style="animation-delay:1.61s">TODO List</text>
+<text x="540" y="477.5" class="pur row" style="animation-delay:1.61s">Clean &amp; simple task manager · Web</text>
+<text x="448" y="505.0" class="sec row" style="animation-delay:1.68s">~/github</text>
+<text x="448" y="522.5" class="row" style="animation-delay:1.75s"><tspan class="key">⚡</tspan><tspan class="val" dx="8">repos 4   ·   stars 32   ·   followers 10</tspan></text>
+<text x="448" y="550.0" class="sec row" style="animation-delay:1.82s">~/reach</text>
+<text x="448" y="567.5" class="key row" style="animation-delay:1.89s">Web</text>
+<text x="540" y="567.5" class="acc row" style="animation-delay:1.89s">musadev.vercel.app</text>
+<text x="448" y="591.0" class="key row" style="animation-delay:1.96s">In</text>
+<text x="540" y="591.0" class="acc row" style="animation-delay:1.96s">linkedin.com/in/muhammadmusadev</text>
+<text x="448" y="614.5" class="key row" style="animation-delay:2.03s">Mail</text>
+<text x="540" y="614.5" class="acc row" style="animation-delay:2.03s">musaJawad004@gmail.com</text>
+<text x="30" y="686" class="row" style="animation-delay:2.20s"><tspan class="key">➜</tspan><tspan class="acc" dx="8">~</tspan><tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan><tspan class="cur" dx="8">█</tspan></text>
+<text x="946" y="686" class="mut" text-anchor="end">last updated 14 Jul 2026, 18:51 PKT</text>
 </svg>

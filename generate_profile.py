@@ -56,16 +56,20 @@ INFO = [
     ("Design",   "Figma · Dribbble", "val"),
     ("__blank__", "", ""),
     ("__section__", "~/projects", ""),
-    ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "warn"),
-    ("AI Studio", "Full-stack AI app experiments · TypeScript", "warn"),
-    ("TODO List", "Clean & simple task manager · Web", "warn"),
+    ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "purple"),
+    ("__gap__", "", ""),
+    ("AI Studio", "Full-stack AI app experiments · TypeScript", "purple"),
+    ("__gap__", "", ""),
+    ("TODO List", "Clean & simple task manager · Web", "purple"),
     ("__blank__", "", ""),
     ("__section__", "~/github", ""),
     ("__stats__", "", ""),
     ("__blank__", "", ""),
     ("__section__", "~/reach", ""),
     ("Web",      "musadev.vercel.app", "accent"),
+    ("__gap__", "", ""),
     ("In",       "linkedin.com/in/muhammadmusadev", "accent"),
+    ("__gap__", "", ""),
     ("Mail",     "musaJawad004@gmail.com", "accent"),
 ]
 
@@ -84,7 +88,7 @@ THEMES = {
     },
 }
 
-W, H = 980, 685
+W, H = 980, 710
 ART_X, ART_Y = 30, 86
 ART_CW = 3.9          # forced char width (textLength keeps this exact in any font)
 ART_LH = ART_CW * 1.72
@@ -145,6 +149,7 @@ def render(theme_name, colors, stats, ist_now):
     .val  {{ fill:{colors['text']}; font-size:13px; }}
     .acc  {{ fill:{colors['accent']}; font-size:13px; }}
     .wrn  {{ fill:{colors['warn']}; font-size:13px; }}
+    .pur  {{ fill:{colors['art']}; font-size:13px; }}
     .mut  {{ fill:{colors['muted']}; font-size:12px; }}
     .hdr  {{ fill:{colors['accent']}; font-size:15px; font-weight:700; }}
     .sec  {{ fill:{colors['muted']}; font-size:12px; letter-spacing:1px; }}
@@ -198,7 +203,7 @@ def render(theme_name, colors, stats, ist_now):
     # info block
     y = INFO_Y
     delay = 0.35
-    cls_map = {"val": "val", "accent": "acc", "warn": "wrn", "muted": "mut"}
+    cls_map = {"val": "val", "accent": "acc", "warn": "wrn", "muted": "mut", "purple": "pur"}
 
     for label, value, ckey in INFO:
         d = f'style="animation-delay:{delay:.2f}s"'
