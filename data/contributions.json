@@ -1,13 +1,13 @@
 {
   "username": "musaJawad004",
-  "generated_at": "2026-08-08T18:50:24Z",
+  "generated_at": "2026-08-09T02:20:14Z",
   "range": {
-    "start": "2025-08-03",
-    "end": "2026-08-08"
+    "start": "2025-08-10",
+    "end": "2026-08-09"
   },
-  "total_contributions": 3567,
-  "active_days": 297,
-  "avg_per_active_day": 12.0,
+  "total_contributions": 3529,
+  "active_days": 292,
+  "avg_per_active_day": 12.1,
   "current_streak": {
     "length": 6,
     "start": "2026-08-03",
@@ -25,7 +25,7 @@
   "monthly": [
     {
       "month": "2025-08",
-      "total": 160
+      "total": 122
     },
     {
       "month": "2025-09",
@@ -77,34 +77,6 @@
     }
   ],
   "days": [
-    {
-      "date": "2025-08-03",
-      "count": 0
-    },
-    {
-      "date": "2025-08-04",
-      "count": 2
-    },
-    {
-      "date": "2025-08-05",
-      "count": 3
-    },
-    {
-      "date": "2025-08-06",
-      "count": 11
-    },
-    {
-      "date": "2025-08-07",
-      "count": 12
-    },
-    {
-      "date": "2025-08-08",
-      "count": 10
-    },
-    {
-      "date": "2025-08-09",
-      "count": 0
-    },
     {
       "date": "2025-08-10",
       "count": 2
@@ -1560,6 +1532,10 @@
     {
       "date": "2026-08-08",
       "count": 3
+    },
+    {
+      "date": "2026-08-09",
+      "count": 0
     }
   ]
 }
