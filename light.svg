@@ -138,7 +138,7 @@
 <text x="448" y="477.5" class="key row" style="animation-delay:1.61s">TODO List</text>
 <text x="540" y="477.5" class="cyn row" style="animation-delay:1.61s">Clean &amp; simple task manager · Web</text>
 <text x="448" y="505.0" class="sec row" style="animation-delay:1.68s">~/github</text>
-<text x="448" y="522.5" class="row" style="animation-delay:1.75s"><tspan class="key">⚡</tspan><tspan class="val" dx="8">repos 7   ·   stars 35   ·   followers 11</tspan></text>
+<text x="448" y="522.5" class="row" style="animation-delay:1.75s"><tspan class="key">⚡</tspan><tspan class="val" dx="8">repos 8   ·   stars 37   ·   followers 11</tspan></text>
 <text x="448" y="550.0" class="sec row" style="animation-delay:1.82s">~/reach</text>
 <text x="448" y="567.5" class="key row" style="animation-delay:1.89s">Web</text>
 <text x="540" y="567.5" class="acc row" style="animation-delay:1.89s">musadev.vercel.app</text>
@@ -147,5 +147,5 @@
 <text x="448" y="614.5" class="key row" style="animation-delay:2.03s">Mail</text>
 <text x="540" y="614.5" class="acc row" style="animation-delay:2.03s">musaJawad004@gmail.com</text>
 <text x="30" y="686" class="row" style="animation-delay:2.20s"><tspan class="key">➜</tspan><tspan class="acc" dx="8">~</tspan><tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan><tspan class="cur" dx="8">█</tspan></text>
-<text x="946" y="686" class="mut" text-anchor="end">last updated 11 Aug 2026, 00:06 PKT</text>
+<text x="946" y="686" class="mut" text-anchor="end">last updated 11 Aug 2026, 07:18 PKT</text>
 </svg>
