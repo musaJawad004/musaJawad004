@@ -161,6 +161,12 @@ def render_divider(c):
     while x <= DW - 16:
         p.append(f'<circle cx="{x}" cy="11" r="1.4" fill="{c["borderv"]}"/>')
         x += 15
+    # scanning pulse: a bright dot sweeps left -> right along the line
+    p.append(f'<circle cy="11" r="2.4" fill="{c["display"]}">'
+             f'<animate attributeName="cx" values="16;{DW-16}" dur="3.6s" '
+             f'calcMode="linear" repeatCount="indefinite"/>'
+             f'<animate attributeName="opacity" values="0;0.9;0.9;0" '
+             f'keyTimes="0;0.06;0.94;1" dur="3.6s" repeatCount="indefinite"/></circle>')
     p.append('</svg>')
     return "\n".join(p)
 

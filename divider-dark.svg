@@ -66,4 +66,5 @@
 <circle cx="946" cy="11" r="1.4" fill="#333333"/>
 <circle cx="961" cy="11" r="1.4" fill="#333333"/>
 <circle cx="976" cy="11" r="1.4" fill="#333333"/>
+<circle cy="11" r="2.4" fill="#FFFFFF"><animate attributeName="cx" values="16;984" dur="3.6s" calcMode="linear" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.06;0.94;1" dur="3.6s" repeatCount="indefinite"/></circle>
 </svg>
