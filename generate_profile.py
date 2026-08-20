@@ -91,7 +91,9 @@ def render(c):
     # status, top-right, with red signal dot
     st_w = len(STATUS) * 7.4 + 16
     sx = RIGHT - st_w
-    p.append(f'<circle cx="{sx+4:.0f}" cy="50" r="4" fill="{c["accent"]}"/>')
+    p.append(f'<circle cx="{sx+4:.0f}" cy="50" r="4" fill="{c["accent"]}">'
+             f'<animate attributeName="opacity" values="1;1;0.18;1" '
+             f'keyTimes="0;0.55;0.66;1" dur="1.7s" repeatCount="indefinite"/></circle>')
     p.append(f'<text x="{sx+16:.0f}" y="54" font-family="{SM}" font-size="12" '
              f'letter-spacing="2" fill="{c["secondary"]}">{escape(STATUS)}</text>')
 

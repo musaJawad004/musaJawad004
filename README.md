@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=6">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/light.svg?v=6">
-  <img alt="Muhammad Musa — AI Engineer & Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=6">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=7">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/light.svg?v=7">
+  <img alt="Muhammad Musa — AI Engineer & Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=7">
 </picture>
 
 # Muhammad Musa
@@ -91,6 +91,12 @@
 ## ~/github
 
 <img src="./musa-heatmap.svg" width="860" alt="Muhammad Musa's GitHub contribution graph — auto-refreshed daily" />
+
+<br/>
+
+<div align="center">
+<img src="./workspace.gif" width="760" alt="Pixel-art dev workspace" />
+</div>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=musaJawad004&icon=0&color=1)](https://visitcount.itsvg.in)
