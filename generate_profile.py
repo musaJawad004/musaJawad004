@@ -1,187 +1,136 @@
 #!/usr/bin/env python3
 """
-Generates the animated "Neural Net Hero" GitHub profile header (dark.svg + light.svg).
+Generates the Nothing-style GitHub profile header (dark.svg + light.svg).
 
-A neural-network graph on the left feeds glowing signal pulses into the name on
-the right. Everything you'd normally tweak lives in CONFIG below. No external
-calls: live GitHub stats are shown by the stats cards in README.md instead.
+Design system: Nothing / Teenage Engineering / Swiss. Monochrome, three-layer
+hierarchy (Doto hero / Space Grotesk body / Space Mono labels), one red signal.
+Fonts are embedded as base64 woff2 so they render on GitHub. No API calls.
 """
 
-from datetime import datetime, timezone, timedelta
-from html import escape
+import base64
 from pathlib import Path
+from html import escape
+
+HERE = Path(__file__).parent
+FONTS = HERE / "fonts"
 
 # ---------------------------------------------------------------- CONFIG
-USERNAME = "musaJawad004"
-NAME     = "Muhammad Musa"
-ROLE     = "AI Engineer & Mobile App Developer"
-TAG      = "AI agents  ·  RAG  ·  custom LLMs  ·  shipped to 10k+ users"
-HANDLE   = "@muhammadmusadev"
-OPEN_TO  = "open to AI Engineer / Mobile Developer roles"
-CHIPS    = ["LLMs", "AI Agents", "RAG", "Fine-Tuning", "Flutter", "React Native"]
+NAME     = "MUHAMMAD MUSA"
+KICKER   = "AI ENGINEER  ·  MOBILE APP DEVELOPER"
+DESC     = "AI agents, RAG systems and custom LLMs. Shipped inside real mobile apps."
+STATUS   = "OPEN TO WORK"
+COMPANY  = "GLIXEN TECHNOLOGIES"
+HANDLE   = "@MUHAMMADMUSADEV"
+STATS = [
+    ("3",    "YEARS EXP"),
+    ("10+",  "APPS SHIPPED"),
+    ("10K+", "ACTIVE USERS"),
+    ("5",    "CUSTOM LLMS"),
+]
 
-W, H = 1000, 340
+W, H = 1000, 330
+PAD_L, PAD_R = 56, 56
+RIGHT = W - PAD_R
 
 THEMES = {
     "dark": {
-        "bg": "#0d1117", "panel": "#0d1117", "border": "#233043",
-        "name": "#e9edf3", "role": "#58a6ff", "muted": "#8b949e",
-        "c1": "#58a6ff", "c2": "#bc8cff", "c3": "#3fb950", "c4": "#39c5cf",
-        "edge": "#2b3a54", "chipbg": "#161b22", "chiptx": "#c9d1d9", "chipbd": "#30363d",
-        "grid": "#161d29",
+        "bg": "#000000", "display": "#FFFFFF", "primary": "#E8E8E8",
+        "secondary": "#999999", "disabled": "#666666", "borderv": "#333333",
+        "accent": "#D71921", "dot": "#2A2A2A",
     },
     "light": {
-        "bg": "#ffffff", "panel": "#ffffff", "border": "#d0d7de",
-        "name": "#1f2328", "role": "#0969da", "muted": "#59636e",
-        "c1": "#0969da", "c2": "#8250df", "c3": "#1a7f37", "c4": "#1b7c83",
-        "edge": "#c9d3e0", "chipbg": "#f6f8fa", "chiptx": "#1f2328", "chipbd": "#d0d7de",
-        "grid": "#eef1f5",
+        "bg": "#F5F5F5", "display": "#000000", "primary": "#1A1A1A",
+        "secondary": "#666666", "disabled": "#999999", "borderv": "#CCCCCC",
+        "accent": "#D71921", "dot": "#DADADA",
     },
 }
 
-# node layers: (x, [y positions])
-LAYERS = [
-    (70,  [95, 170, 245]),
-    (162, [70, 132, 198, 258]),
-    (255, [102, 170, 238]),
-    (340, [170]),
-]
+def _b64(fname):
+    return base64.b64encode((FONTS / fname).read_bytes()).decode()
 
-def _nearest2(y, ys):
-    return sorted(range(len(ys)), key=lambda k: abs(ys[k] - y))[:2]
+def font_faces():
+    faces = [
+        ("Doto",          "100 900", "Doto-var.woff2"),
+        ("Space Grotesk", "400",     "SpaceGrotesk-400.woff2"),
+        ("Space Grotesk", "500",     "SpaceGrotesk-500.woff2"),
+        ("Space Mono",    "400",     "SpaceMono-400.woff2"),
+    ]
+    out = []
+    for fam, wght, f in faces:
+        out.append(f"@font-face{{font-family:'{fam}';font-style:normal;"
+                   f"font-weight:{wght};src:url(data:font/woff2;base64,{_b64(f)}) format('woff2');}}")
+    return "\n".join(out)
 
-def build_graph():
-    nodes = []   # (x, y, colorkey)
-    layer_ids = []
-    ck = ["c1", "c2", "c3", "c4"]
-    idx = 0
-    for li, (x, ys) in enumerate(LAYERS):
-        ids = []
-        for yi, y in enumerate(ys):
-            nodes.append((x, y, ck[(li + yi) % 4]))
-            ids.append(idx); idx += 1
-        layer_ids.append(ids)
-    edges = []
-    for li in range(len(LAYERS) - 1):
-        x0, ys0 = LAYERS[li]
-        x1, ys1 = LAYERS[li + 1]
-        for a_i, ya in zip(layer_ids[li], ys0):
-            for k in _nearest2(ya, ys1):
-                edges.append((a_i, layer_ids[li + 1][k]))
-    return nodes, edges
+def corner(x, y, dx, dy, c):
+    return (f'<path d="M{x+dx*16} {y} H{x} V{y+dy*16}" stroke="{c}" '
+            f'stroke-width="1.4" fill="none"/>')
 
-def render(colors):
-    nodes, edges = build_graph()
+def render(c):
     p = []
     p.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
-             f'viewBox="0 0 {W} {H}" font-family="ui-sans-serif, -apple-system, '
-             f"'Segoe UI', Roboto, Helvetica, Arial, sans-serif\">")
-    # defs: glow + gradient
-    p.append(f'''<defs>
-      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-        <feGaussianBlur stdDeviation="2.4" result="b"/>
-        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-      <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="{colors['c1']}"/>
-        <stop offset="0.5" stop-color="{colors['c2']}"/>
-        <stop offset="1" stop-color="{colors['c3']}"/>
-      </linearGradient>
-    </defs>''')
-    # card
-    p.append(f'<rect x="1.5" y="1.5" width="{W-3}" height="{H-3}" rx="16" '
-             f'fill="{colors["bg"]}" stroke="{colors["border"]}" stroke-width="1.6"/>')
-    # faint dotted grid on the left half
-    p.append(f'<rect x="2" y="2" width="380" height="{H-4}" rx="16" fill="url(#gridpat)" opacity="0"/>')
+             f'viewBox="0 0 {W} {H}">')
+    p.append(f'<defs><style>{font_faces()}</style>'
+             f'<pattern id="dg" width="16" height="16" patternUnits="userSpaceOnUse">'
+             f'<circle cx="1" cy="1" r="1" fill="{c["dot"]}"/></pattern></defs>')
+    # canvas + subtle dot grid
+    p.append(f'<rect width="{W}" height="{H}" fill="{c["bg"]}"/>')
+    p.append(f'<rect width="{W}" height="{H}" fill="url(#dg)" opacity="0.55"/>')
+    # corner registration ticks
+    p.append(corner(20, 20, 1, 1, c["borderv"]))
+    p.append(corner(W-20, 20, -1, 1, c["borderv"]))
+    p.append(corner(20, H-20, 1, -1, c["borderv"]))
+    p.append(corner(W-20, H-20, -1, -1, c["borderv"]))
 
-    # ---- edges ----
-    p.append('<g stroke-linecap="round">')
-    for i, (a, b) in enumerate(edges):
-        x1, y1, _ = nodes[a]; x2, y2, _ = nodes[b]
-        dur = 3.2 + (i % 5) * 0.4
-        beg = (i % 7) * 0.3
-        p.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{colors["edge"]}" stroke-width="1.4">'
-                 f'<animate attributeName="opacity" values="0.35;0.85;0.35" dur="{dur}s" '
-                 f'begin="{beg}s" repeatCount="indefinite"/></line>')
-    p.append('</g>')
+    SM = "'Space Mono', monospace"
+    SG = "'Space Grotesk', sans-serif"
+    DOTO = "'Doto', 'Space Mono', monospace"
 
-    # edges converging from last hidden layer to output node -> then to name (accent)
-    ox, oy, _ = nodes[-1]
-    p.append(f'<line x1="{ox}" y1="{oy}" x2="392" y2="150" stroke="{colors["role"]}" '
-             f'stroke-width="1.8" opacity="0.55" stroke-dasharray="4 5">'
-             f'<animate attributeName="stroke-dashoffset" values="18;0" dur="1.1s" repeatCount="indefinite"/></line>')
+    # --- tertiary top labels ---
+    p.append(f'<text x="{PAD_L}" y="54" font-family="{SM}" font-size="12" '
+             f'letter-spacing="3" fill="{c["secondary"]}">{escape(KICKER)}</text>')
+    # status, top-right, with red signal dot
+    st_w = len(STATUS) * 7.4 + 16
+    sx = RIGHT - st_w
+    p.append(f'<circle cx="{sx+4:.0f}" cy="50" r="4" fill="{c["accent"]}"/>')
+    p.append(f'<text x="{sx+16:.0f}" y="54" font-family="{SM}" font-size="12" '
+             f'letter-spacing="2" fill="{c["secondary"]}">{escape(STATUS)}</text>')
 
-    # ---- travelling signal pulses on a subset of edges ----
-    sig = edges[::max(1, len(edges)//7)][:7] + [(len(nodes)-1, None)]
-    for i, (a, b) in enumerate(sig):
-        if b is None:
-            x1, y1, _ = nodes[a]; x2, y2 = 392, 150
-            col = colors["role"]
-        else:
-            x1, y1, _ = nodes[a]; x2, y2, _ = nodes[b]
-            col = colors["c1"] if i % 2 else colors["c2"]
-        dur = 2.1 + (i % 4) * 0.5
-        beg = i * 0.42
-        p.append(f'<circle r="3.1" fill="{col}" filter="url(#glow)" opacity="0">'
-                 f'<animate attributeName="cx" values="{x1};{x2}" dur="{dur}s" begin="{beg}s" repeatCount="indefinite"/>'
-                 f'<animate attributeName="cy" values="{y1};{y2}" dur="{dur}s" begin="{beg}s" repeatCount="indefinite"/>'
-                 f'<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.05;0.2;0.85;1" '
-                 f'dur="{dur}s" begin="{beg}s" repeatCount="indefinite"/></circle>')
+    # --- PRIMARY: Doto dot-matrix hero name ---
+    p.append(f'<text x="{PAD_L-2}" y="138" font-family="{DOTO}" font-size="66" '
+             f'font-weight="600" letter-spacing="1" fill="{c["display"]}">{escape(NAME)}</text>')
 
-    # ---- nodes (halo pulse + core) ----
-    for i, (x, y, ckey) in enumerate(nodes):
-        col = colors[ckey]
-        d = 3 + (i % 6) * 0.5
-        p.append(f'<circle cx="{x}" cy="{y}" r="9" fill="{col}" opacity="0.16">'
-                 f'<animate attributeName="r" values="8;13;8" dur="{d}s" repeatCount="indefinite"/>'
-                 f'<animate attributeName="opacity" values="0.05;0.22;0.05" dur="{d}s" repeatCount="indefinite"/></circle>')
-        p.append(f'<circle cx="{x}" cy="{y}" r="4.4" fill="{col}" filter="url(#glow)"/>')
-    # output node bigger
-    p.append(f'<circle cx="{ox}" cy="{oy}" r="7" fill="{colors["role"]}" filter="url(#glow)">'
-             f'<animate attributeName="r" values="6.5;8.5;6.5" dur="2.2s" repeatCount="indefinite"/></circle>')
+    # --- secondary description ---
+    p.append(f'<text x="{PAD_L}" y="176" font-family="{SG}" font-size="16.5" '
+             f'font-weight="400" fill="{c["primary"]}">{escape(DESC)}</text>')
 
-    # ---- text block ----
-    tx = 396
-    p.append(f'<text x="{tx}" y="120" fill="{colors["muted"]}" font-size="14" '
-             f'letter-spacing="3" font-weight="600">{escape(HANDLE.upper())}</text>')
-    p.append(f'<text x="{tx-2}" y="168" fill="{colors["name"]}" font-size="46" '
-             f'font-weight="800" letter-spacing="-0.5">{escape(NAME)}</text>')
-    p.append(f'<text x="{tx}" y="200" fill="{colors["role"]}" font-size="20.5" '
-             f'font-weight="700">{escape(ROLE)}</text>')
-    p.append(f'<text x="{tx}" y="226" fill="{colors["muted"]}" font-size="13.5">{escape(TAG)}</text>')
+    # --- instrument stat row ---
+    top, bot = 232, 288
+    vy, ly = 268, 285
+    cellw = (W - PAD_L - PAD_R) / len(STATS)
+    for i, (val, lab) in enumerate(STATS):
+        cx = PAD_L + i * cellw
+        if i > 0:
+            p.append(f'<line x1="{cx:.0f}" y1="{top}" x2="{cx:.0f}" y2="{bot}" '
+                     f'stroke="{c["borderv"]}" stroke-width="1"/>')
+        px = cx + (18 if i > 0 else 0)
+        p.append(f'<text x="{px:.0f}" y="{vy}" font-family="{SM}" font-size="30" '
+                 f'fill="{c["display"]}">{escape(val)}</text>')
+        p.append(f'<text x="{px:.0f}" y="{ly}" font-family="{SM}" font-size="11" '
+                 f'letter-spacing="1.5" fill="{c["secondary"]}">{escape(lab)}</text>')
 
-    # ---- chips ----
-    cx = tx; cy = 250
-    for i, label in enumerate(CHIPS):
-        wch = int(len(label) * 8.0) + 26
-        p.append(f'<g>'
-                 f'<rect x="{cx}" y="{cy}" width="{wch}" height="27" rx="8" '
-                 f'fill="{colors["chipbg"]}" stroke="{colors["chipbd"]}" stroke-width="1.3"/>'
-                 f'<circle cx="{cx+13}" cy="{cy+13.5}" r="3" fill="{colors[["c1","c2","c3","c4"][i%4]]}"/>'
-                 f'<text x="{cx+23}" y="{cy+18}" fill="{colors["chiptx"]}" font-size="13" '
-                 f'font-weight="600">{escape(label)}</text></g>')
-        cx += wch + 9
-        if cx > W - 130:  # wrap
-            cx = tx; cy += 34
-
-    # ---- footer ----
-    p.append(f'<line x1="{tx}" y1="303" x2="{W-40}" y2="303" stroke="{colors["border"]}" stroke-width="1"/>')
-    p.append(f'<text x="{tx}" y="322" fill="{colors["c3"]}" font-size="13">'
-             f'<tspan font-weight="700">●</tspan>'
-             f'<tspan dx="7" fill="{colors["muted"]}">{escape(OPEN_TO)}</tspan></text>')
-    p.append(f'<text x="{W-40}" y="322" fill="{colors["muted"]}" font-size="12" '
-             f'text-anchor="end">{escape(HANDLE)}</text>')
+    # --- bottom meta line ---
+    p.append(f'<text x="{PAD_L}" y="{H-22}" font-family="{SM}" font-size="11" '
+             f'letter-spacing="1.5" fill="{c["disabled"]}">{escape(COMPANY)}</text>')
+    p.append(f'<text x="{RIGHT}" y="{H-22}" font-family="{SM}" font-size="11" '
+             f'letter-spacing="1.5" text-anchor="end" fill="{c["disabled"]}">{escape(HANDLE)}</text>')
 
     p.append("</svg>")
     return "\n".join(p)
 
-
 def main():
-    out = Path(__file__).parent
-    for name, colors in THEMES.items():
-        (out / f"{name}.svg").write_text(render(colors), encoding="utf-8")
+    for name, c in THEMES.items():
+        (HERE / f"{name}.svg").write_text(render(c), encoding="utf-8")
         print(f"wrote {name}.svg")
-
 
 if __name__ == "__main__":
     main()
