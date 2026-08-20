@@ -220,11 +220,45 @@ def render_achievements(c):
     p.append('</svg>')
     return "\n".join(p)
 
+def render_stack(c):
+    SW = 1000
+    SM = "'Space Mono', monospace"
+    groups = [
+        ("AI / ML", ["LLMs · AI Agents · RAG · Fine-Tuning · Embeddings · Prompt Engineering",
+                     "Vector DBs · OpenAI · Ollama · RunPod · LangChain · Hugging Face"]),
+        ("MOBILE", ["Flutter · Dart · React Native · Expo"]),
+        ("BACKEND", ["Node.js · Express · REST APIs · JWT"]),
+        ("DATABASES", ["PostgreSQL · MongoDB · Firebase · pgvector · MySQL"]),
+        ("LANG / TOOLS", ["TypeScript · JavaScript · Python · Git · GitHub Actions · Docker · Postman"]),
+    ]
+    lh, gg, top = 24, 18, 34
+    labelx, itemx = 30, 192
+    body, y = [], top
+    for label, lines in groups:
+        body.append(f'<circle cx="{labelx+3}" cy="{y+9}" r="2.6" fill="{c["display"]}"/>')
+        body.append(f'<text x="{labelx+14}" y="{y+14}" font-family="{SM}" font-size="11" '
+                    f'letter-spacing="2" fill="{c["secondary"]}">{label}</text>')
+        for j, line in enumerate(lines):
+            body.append(f'<text x="{itemx}" y="{y+14 + j*lh}" font-family="{SM}" font-size="13.5" '
+                        f'fill="{c["primary"]}">{escape(line)}</text>')
+        y += len(lines) * lh + gg
+    SH = y + 10
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{SW}" height="{SH}" viewBox="0 0 {SW} {SH}">']
+    p.append(f'<defs><style>{font_faces()}</style></defs>')
+    p.append(f'<rect x="1" y="1" width="{SW-2}" height="{SH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
+    p += [corner(18, 18, 1, 1, c["borderv"]), corner(SW-18, 18, -1, 1, c["borderv"]),
+          corner(18, SH-18, 1, -1, c["borderv"]), corner(SW-18, SH-18, -1, -1, c["borderv"])]
+    p.append(f'<line x1="{itemx-26}" y1="20" x2="{itemx-26}" y2="{SH-20}" stroke="{c["borderv"]}" stroke-width="1"/>')
+    p += body
+    p.append('</svg>')
+    return "\n".join(p)
+
 def main():
     for name, c in THEMES.items():
         (HERE / f"{name}.svg").write_text(render(c), encoding="utf-8")
         (HERE / f"status-{name}.svg").write_text(render_status(c), encoding="utf-8")
         (HERE / f"divider-{name}.svg").write_text(render_divider(c), encoding="utf-8")
+        (HERE / f"stack-{name}.svg").write_text(render_stack(c), encoding="utf-8")
         (HERE / f"achievements-{name}.svg").write_text(render_achievements(c), encoding="utf-8")
         print(f"wrote {name} set")
 
