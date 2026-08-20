@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/dark.svg?v=5">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/light.svg?v=5">
-  <img alt="Muhammad Musa — AI Engineer & Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/dark.svg?v=5">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=5">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/light.svg?v=5">
+  <img alt="Muhammad Musa — AI Engineer & Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=5">
 </picture>
 
 # Muhammad Musa
@@ -89,13 +89,6 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
 
 ## ~/github
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=musaJawad004&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=tokyonight&icon_color=bc8cff&title_color=58a6ff" alt="Muhammad Musa GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=musaJawad004&layout=compact&hide_border=true&langs_count=8&theme=tokyonight&title_color=58a6ff" alt="Top languages" />
-
-</div>
 
 <img src="./musa-heatmap.svg" width="860" alt="Muhammad Musa's GitHub contribution graph — auto-refreshed daily" />
 
