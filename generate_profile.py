@@ -171,10 +171,20 @@ def render_divider(c):
     return "\n".join(p)
 
 def render_achievements(c):
-    AW, AH = 1000, 118
+    AW = 1000
     SM = "'Space Mono', monospace"
-    ACH = [("MASTER", "STARGAZER"), ("MASTER", "MAINTAINER"), ("SUPER", "MEMBER"),
-           ("GREAT", "DEVELOPER"), ("UNLOCKED", "EXPLORER")]
+    # (name, tier, fill 0..1, count)
+    rows = [
+        ("STARGAZER",  "MASTER",   1.00, "1491"),
+        ("MAINTAINER", "MASTER",   1.00, "13860"),
+        ("DEVELOPER",  "GREAT",    0.82, "37"),
+        ("MEMBER",     "SUPER",    0.60, "8"),
+        ("EXPLORER",   "UNLOCKED", 0.35, "NEW"),
+    ]
+    rowh, top = 46, 60
+    AH = top + len(rows) * rowh + 22
+    nseg, sw, gap, bx = 24, 20, 4, 300
+    bw = nseg * (sw + gap) - gap
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{AW}" height="{AH}" viewBox="0 0 {AW} {AH}">']
     p.append(f'<defs><style>{font_faces()}</style></defs>')
     p.append(f'<rect x="1" y="1" width="{AW-2}" height="{AH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
@@ -182,22 +192,31 @@ def render_achievements(c):
     p.append(corner(AW-18, 18, -1, 1, c["borderv"]))
     p.append(corner(18, AH-18, 1, -1, c["borderv"]))
     p.append(corner(AW-18, AH-18, -1, -1, c["borderv"]))
-    p.append(f'<text x="30" y="34" font-family="{SM}" font-size="12" letter-spacing="3" '
+    p.append(f'<text x="30" y="36" font-family="{SM}" font-size="12" letter-spacing="3" '
              f'fill="{c["secondary"]}">ACHIEVEMENTS</text>')
-    p.append(f'<text x="{AW-30}" y="34" font-family="{SM}" font-size="11" letter-spacing="2" '
+    p.append(f'<text x="{AW-30}" y="36" font-family="{SM}" font-size="11" letter-spacing="2" '
              f'text-anchor="end" fill="{c["disabled"]}">GITHUB</text>')
-    n = len(ACH)
-    x0, cw = 30, (AW - 60) / n
-    for i, (tier, name) in enumerate(ACH):
-        cx = x0 + i * cw
-        if i > 0:
-            p.append(f'<line x1="{cx:.0f}" y1="54" x2="{cx:.0f}" y2="100" stroke="{c["borderv"]}"/>')
-        px = cx + (18 if i > 0 else 0)
-        p.append(f'<circle cx="{px+4:.0f}" cy="66" r="3.2" fill="{c["display"]}"/>')
-        p.append(f'<text x="{px+16:.0f}" y="70" font-family="{SM}" font-size="10" '
-                 f'letter-spacing="1.5" fill="{c["secondary"]}">{tier}</text>')
-        p.append(f'<text x="{px:.0f}" y="93" font-family="{SM}" font-size="16" '
-                 f'fill="{c["display"]}">{name}</text>')
+    for r, (name, tier, pct, count) in enumerate(rows):
+        y = top + r * rowh
+        if r > 0:
+            p.append(f'<line x1="30" y1="{y}" x2="{AW-30}" y2="{y}" stroke="{c["borderv"]}" stroke-width="1"/>')
+        p.append(f'<text x="30" y="{y+22}" font-family="{SM}" font-size="16" fill="{c["display"]}">{name}</text>')
+        p.append(f'<text x="30" y="{y+37}" font-family="{SM}" font-size="9" letter-spacing="1.5" '
+                 f'fill="{c["secondary"]}">{tier}</text>')
+        filled = round(pct * nseg)
+        by = y + 15
+        for i in range(nseg):
+            sx = bx + i * (sw + gap)
+            if i < filled:
+                delay = 0.15 + r * 0.28 + i * 0.022
+                p.append(f'<rect x="{sx}" y="{by}" width="{sw}" height="12" fill="{c["display"]}" opacity="0">'
+                         f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.2f}s" '
+                         f'dur="0.18s" fill="freeze"/></rect>')
+            else:
+                p.append(f'<rect x="{sx}" y="{by}" width="{sw}" height="12" fill="none" '
+                         f'stroke="{c["borderv"]}" stroke-width="1"/>')
+        p.append(f'<text x="{AW-30}" y="{y+27}" font-family="{SM}" font-size="15" '
+                 f'text-anchor="end" fill="{c["display"]}">{count}</text>')
     p.append('</svg>')
     return "\n".join(p)
 

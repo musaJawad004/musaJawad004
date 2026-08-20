@@ -24,9 +24,9 @@
 -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-light.svg?v=1">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=1" alt="STATUS: BUILDING · FOCUS: AI AGENTS + RAG · TZ: PKT · REPLIES < 24H" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-light.svg?v=2">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=2" alt="STATUS: BUILDING · FOCUS: AI AGENTS + RAG · TZ: PKT · REPLIES < 24H" width="100%">
 </picture>
 
 ## ~/about
@@ -46,9 +46,9 @@
 - 🌱 Going deeper on **agentic systems, LLM inference & vector search**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=1">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=2">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=2" alt="" width="100%">
 </picture>
 
 ## ~/stack
@@ -101,23 +101,23 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=1">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=2">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=2" alt="" width="100%">
 </picture>
 
 ## ~/achievements
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-light.svg?v=1">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=1" alt="GitHub achievements: Master Stargazer, Master Maintainer, Super Member, Great Developer, Explorer" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-light.svg?v=2">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=2" alt="GitHub achievements: Master Stargazer, Master Maintainer, Super Member, Great Developer, Explorer" width="100%">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=1">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=2">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=2" alt="" width="100%">
 </picture>
 
 ## ~/github
