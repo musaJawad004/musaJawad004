@@ -170,12 +170,44 @@ def render_divider(c):
     p.append('</svg>')
     return "\n".join(p)
 
+def render_achievements(c):
+    AW, AH = 1000, 118
+    SM = "'Space Mono', monospace"
+    ACH = [("MASTER", "STARGAZER"), ("MASTER", "MAINTAINER"), ("SUPER", "MEMBER"),
+           ("GREAT", "DEVELOPER"), ("UNLOCKED", "EXPLORER")]
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{AW}" height="{AH}" viewBox="0 0 {AW} {AH}">']
+    p.append(f'<defs><style>{font_faces()}</style></defs>')
+    p.append(f'<rect x="1" y="1" width="{AW-2}" height="{AH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
+    p.append(corner(18, 18, 1, 1, c["borderv"]))
+    p.append(corner(AW-18, 18, -1, 1, c["borderv"]))
+    p.append(corner(18, AH-18, 1, -1, c["borderv"]))
+    p.append(corner(AW-18, AH-18, -1, -1, c["borderv"]))
+    p.append(f'<text x="30" y="34" font-family="{SM}" font-size="12" letter-spacing="3" '
+             f'fill="{c["secondary"]}">ACHIEVEMENTS</text>')
+    p.append(f'<text x="{AW-30}" y="34" font-family="{SM}" font-size="11" letter-spacing="2" '
+             f'text-anchor="end" fill="{c["disabled"]}">GITHUB</text>')
+    n = len(ACH)
+    x0, cw = 30, (AW - 60) / n
+    for i, (tier, name) in enumerate(ACH):
+        cx = x0 + i * cw
+        if i > 0:
+            p.append(f'<line x1="{cx:.0f}" y1="54" x2="{cx:.0f}" y2="100" stroke="{c["borderv"]}"/>')
+        px = cx + (18 if i > 0 else 0)
+        p.append(f'<circle cx="{px+4:.0f}" cy="66" r="3.2" fill="{c["display"]}"/>')
+        p.append(f'<text x="{px+16:.0f}" y="70" font-family="{SM}" font-size="10" '
+                 f'letter-spacing="1.5" fill="{c["secondary"]}">{tier}</text>')
+        p.append(f'<text x="{px:.0f}" y="93" font-family="{SM}" font-size="16" '
+                 f'fill="{c["display"]}">{name}</text>')
+    p.append('</svg>')
+    return "\n".join(p)
+
 def main():
     for name, c in THEMES.items():
         (HERE / f"{name}.svg").write_text(render(c), encoding="utf-8")
         (HERE / f"status-{name}.svg").write_text(render_status(c), encoding="utf-8")
         (HERE / f"divider-{name}.svg").write_text(render_divider(c), encoding="utf-8")
-        print(f"wrote {name}.svg, status-{name}.svg, divider-{name}.svg")
+        (HERE / f"achievements-{name}.svg").write_text(render_achievements(c), encoding="utf-8")
+        print(f"wrote {name} set")
 
 if __name__ == "__main__":
     main()

@@ -106,6 +106,20 @@
   <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
 </picture>
 
+## ~/achievements
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-light.svg?v=1">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=1" alt="GitHub achievements: Master Stargazer, Master Maintainer, Super Member, Great Developer, Explorer" width="100%">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=1">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
+</picture>
+
 ## ~/github
 
 <img src="./musa-heatmap.svg" width="860" alt="Muhammad Musa's GitHub contribution graph — auto-refreshed daily" />
