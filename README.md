@@ -23,6 +23,12 @@
   CONFIG (NAME / KICKER / DESC / STATS) in the script, never the .svg directly.
 -->
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-light.svg?v=1">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=1" alt="STATUS: BUILDING · FOCUS: AI AGENTS + RAG · TZ: PKT · REPLIES < 24H" width="100%">
+</picture>
+
 ## ~/about
 
 - 🤖 **AI Engineer & Mobile App Developer** with **3 years** building AI apps that actually ship, not demos
@@ -38,6 +44,12 @@
 - 🦙 Training & fine-tuning **custom LLMs** with **RunPod** and **Ollama** for real features
 - 🧩 Designing **full-stack AI**: model &rarr; backend &rarr; mobile app
 - 🌱 Going deeper on **agentic systems, LLM inference & vector search**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=1">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
+</picture>
 
 ## ~/stack
 
@@ -87,6 +99,12 @@
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=1">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=1" alt="" width="100%">
+</picture>
 
 ## ~/github
 

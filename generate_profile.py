@@ -129,10 +129,47 @@ def render(c):
     p.append("</svg>")
     return "\n".join(p)
 
+def render_status(c):
+    SW, SH = 1000, 54
+    SM = "'Space Mono', monospace"
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{SW}" height="{SH}" viewBox="0 0 {SW} {SH}">']
+    p.append(f'<defs><style>{font_faces()}</style></defs>')
+    p.append(f'<rect x="1" y="1" width="{SW-2}" height="{SH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
+    p.append(f'<circle cx="28" cy="27" r="4.5" fill="#4A9E5C"><animate attributeName="opacity" '
+             f'values="1;1;0.25;1" keyTimes="0;0.5;0.62;1" dur="1.8s" repeatCount="indefinite"/></circle>')
+    segs = [("STATUS", "BUILDING"), ("FOCUS", "AI AGENTS + RAG"),
+            ("TZ", "PKT / UTC+5"), ("REPLIES", "< 24H")]
+    fs = 12.5
+    cw = fs * 0.605
+    x = 44
+    for i, (lab, val) in enumerate(segs):
+        if i > 0:
+            p.append(f'<line x1="{x-14:.0f}" y1="16" x2="{x-14:.0f}" y2="38" stroke="{c["borderv"]}"/>')
+        p.append(f'<text x="{x:.0f}" y="31" font-family="{SM}" font-size="{fs}" letter-spacing="1">'
+                 f'<tspan fill="{c["secondary"]}">{escape(lab)}</tspan>'
+                 f'<tspan dx="7" fill="{c["display"]}">{escape(val)}</tspan></text>')
+        x += (len(lab) + len(val)) * cw + 7 + 28
+    p.append('</svg>')
+    return "\n".join(p)
+
+def render_divider(c):
+    DW, DH = 1000, 22
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{DW}" height="{DH}" viewBox="0 0 {DW} {DH}">']
+    p.append(f'<line x1="4" y1="4" x2="4" y2="18" stroke="{c["borderv"]}" stroke-width="1.4"/>')
+    p.append(f'<line x1="{DW-4}" y1="4" x2="{DW-4}" y2="18" stroke="{c["borderv"]}" stroke-width="1.4"/>')
+    x = 16
+    while x <= DW - 16:
+        p.append(f'<circle cx="{x}" cy="11" r="1.4" fill="{c["borderv"]}"/>')
+        x += 15
+    p.append('</svg>')
+    return "\n".join(p)
+
 def main():
     for name, c in THEMES.items():
         (HERE / f"{name}.svg").write_text(render(c), encoding="utf-8")
-        print(f"wrote {name}.svg")
+        (HERE / f"status-{name}.svg").write_text(render_status(c), encoding="utf-8")
+        (HERE / f"divider-{name}.svg").write_text(render_divider(c), encoding="utf-8")
+        print(f"wrote {name}.svg, status-{name}.svg, divider-{name}.svg")
 
 if __name__ == "__main__":
     main()
