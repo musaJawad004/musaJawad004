@@ -32,28 +32,26 @@ def load_portrait():
 INFO = [
     ("__header__", "Muhammad Musa", ""),
     ("__rule__", "", ""),
-    ("Role",     "AI App Developer | Flutter & React Native", "val"),
-    ("",         "LLMs, AI Agents & Full Stack", "accent"),
+    ("Role",     "AI Engineer & Mobile App Developer", "val"),
+    ("",         "LLMs · AI Agents · RAG · Full-Stack", "accent"),
     ("__blank__", "", ""),
     ("__section__", "~/stack", ""),
-    ("Lang",     "TypeScript · JavaScript · Dart · Python · Markdown", "val"),
+    ("AI",       "LLMs · AI Agents · RAG · Fine-Tuning", "val"),
+    ("",         "Embeddings · Vector DBs · Prompt Engineering", "muted"),
     ("__gap__", "", ""),
-    ("Mobile",   "Flutter · React Native · Expo", "val"),
+    ("Models",   "OpenAI · Ollama · RunPod · Llama · Qwen · Mistral", "val"),
     ("__gap__", "", ""),
-    ("Backend",  "Node.js · Express · Nodemon · JWT · npm · Firebase", "val"),
+    ("Mobile",   "Flutter · Dart · React Native · Expo", "val"),
     ("__gap__", "", ""),
-    ("AI",       "OpenAI · Claude · Gemini · Ollama · LangChain", "val"),
-    ("",         "Hugging Face · RunPod · AI Studio · Copilot", "muted"),
+    ("Backend",  "Node.js · Express · REST APIs · JWT", "val"),
     ("__gap__", "", ""),
-    ("Data",     "PostgreSQL · MySQL · SQLite · Supabase", "val"),
+    ("Data",     "PostgreSQL · MongoDB · Firebase · pgvector", "val"),
     ("__gap__", "", ""),
-    ("Infra",    "Docker · Vercel · Railway · Render · DigitalOcean", "val"),
+    ("Lang",     "TypeScript · JavaScript · Dart · Python", "val"),
     ("__gap__", "", ""),
-    ("Tools",    "Git · GitHub Actions · Postman · Apache", "val"),
+    ("Tools",    "Git · GitHub Actions · Docker · Postman", "val"),
     ("__gap__", "", ""),
-    ("IDE",      "Android Studio · Xcode · Cursor · Windows 11", "val"),
-    ("__gap__", "", ""),
-    ("Design",   "Figma · Dribbble", "val"),
+    ("IDE",      "Cursor · Android Studio · Xcode", "val"),
     ("__blank__", "", ""),
     ("__section__", "~/projects", ""),
     ("Spottro",  "Cross-platform mobile app · Flutter / Dart", "cyan"),
@@ -252,7 +250,7 @@ def render(theme_name, colors, stats, ist_now):
         f'<text x="{ART_X}" y="{fy}" class="row" style="animation-delay:{delay+0.1:.2f}s">'
         f'<tspan class="key">➜</tspan>'
         f'<tspan class="acc" dx="8">~</tspan>'
-        f'<tspan class="val" dx="8">open to AI App / Full-Stack Developer roles</tspan>'
+        f'<tspan class="val" dx="8">open to AI Engineer / Mobile Developer roles</tspan>'
         f'<tspan class="cur" dx="8">█</tspan></text>'
     )
     parts.append(
