@@ -16,8 +16,8 @@ HERE = os.path.dirname(__file__)
 IN_PATH = os.path.join(HERE, "..", "data", "contributions.json")
 OUT_PATH = os.path.join(HERE, "..", "musa-heatmap.svg")
 
-# GitHub-ish green ramp: empty -> brightest. Level 5 is a brighter neon top end.
-PALETTE = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353", "#69f0a0"]
+# NEURO//MUSA signal ramp: sleeping node -> cyan -> violet -> hot signal.
+PALETTE = ["#101323", "#183149", "#155E75", "#0EA5E9", "#8B5CF6", "#FF4FD8"]
 
 CELL = 12
 GAP = 3
@@ -27,14 +27,14 @@ LEFT_LABEL_W = 30
 TOP_LABEL_H = 20
 TITLEBAR_H = 30
 
-BG = "#0d1117"
-BG2 = "#161b22"
-FRAME = "#30363d"
-MUTED = "#8b949e"
-TEXT = "#c9d1d9"
-ACCENT = "#58a6ff"
-GREEN = "#3fb950"
-GOLD = "#d29922"
+BG = "#05050A"
+BG2 = "#0B0D14"
+FRAME = "#1C2740"
+MUTED = "#8091A7"
+TEXT = "#D8E5FF"
+ACCENT = "#5FFBF1"
+GREEN = "#8B5CF6"
+GOLD = "#FF4FD8"
 
 # reveal timing (one-shot)
 COL_T = 0.018   # per-column delay contribution (left -> right sweep)
@@ -116,16 +116,19 @@ def render(data):
         '<defs>'
         f'<linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient>'
+        '<radialGradient id="aura"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".16"/>'
+        '<stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>'
         '</defs>',
         f'<rect width="{canvas_w}" height="{canvas_h}" rx="12" fill="url(#hbg)"/>',
+        f'<circle cx="{canvas_w * .74:.1f}" cy="{canvas_h * .42:.1f}" r="240" fill="url(#aura)"/>',
         f'<rect x="0.5" y="0.5" width="{canvas_w-1}" height="{canvas_h-1}" rx="12" '
         f'fill="none" stroke="{FRAME}" stroke-width="1" stroke-opacity="1"/>',
         f'<line x1="0" y1="{TITLEBAR_H}" x2="{canvas_w}" y2="{TITLEBAR_H}" stroke="{FRAME}" stroke-opacity="1"/>',
     ]
-    for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+    for i, dotcol in enumerate(["#5FFBF1", "#8B5CF6", "#FF4FD8"]):
         parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
     parts.append(f'<text x="{canvas_w/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
-                     f'text-anchor="middle">musa@github: ~/contributions --graph</text>')
+                     f'text-anchor="middle">musa@neural-node: ~/activity_stream --live</text>')
 
     grid_top = TITLEBAR_H + TOP_LABEL_H
     grid_left = PAD + LEFT_LABEL_W
@@ -177,7 +180,7 @@ def render(data):
     # left column: big highlighted numbers; right column: context in muted
     parts.append(f'<text x="{PAD}" y="{ly}" font-size="13" fill="{GREEN}">'
                  f'<tspan font-weight="700">{total:,}</tspan>'
-                 f'<tspan fill="{MUTED}"> contributions in the last year</tspan></text>')
+                 f'<tspan fill="{MUTED}"> signal events in the last cycle</tspan></text>')
     parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
                  f'{rng["start"]} &#8594; {rng["end"]}</text>')
     ly += 24

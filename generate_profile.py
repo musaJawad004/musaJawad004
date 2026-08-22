@@ -1,266 +1,290 @@
 #!/usr/bin/env python3
-"""
-Generates the Nothing-style GitHub profile header (dark.svg + light.svg).
+"""Generate the NEURO//MUSA V2 GitHub profile artwork.
 
-Design system: Nothing / Teenage Engineering / Swiss. Monochrome, three-layer
-hierarchy (Doto hero / Space Grotesk body / Space Mono labels), one red signal.
-Fonts are embedded as base64 woff2 so they render on GitHub. No API calls.
+The profile is intentionally closer to a fictional AI interface than a resume:
+neural paths, synthetic signals, playful system language, and a vivid three-color
+identity. Fonts are embedded so every panel renders consistently on GitHub.
 """
 
 import base64
-from pathlib import Path
 from html import escape
+from pathlib import Path
+
 
 HERE = Path(__file__).parent
 FONTS = HERE / "fonts"
 
-# ---------------------------------------------------------------- CONFIG
-NAME     = "MUHAMMAD MUSA"
-KICKER   = "AI ENGINEER  ·  MOBILE APP DEVELOPER"
-DESC     = "AI agents, RAG systems and custom LLMs. Shipped inside real mobile apps."
-STATUS   = "OPEN TO WORK"
-COMPANY  = "GLIXEN TECHNOLOGIES"
-HANDLE   = "@MUHAMMADMUSADEV"
-STATS = [
-    ("3",    "YEARS EXP"),
-    ("10+",  "APPS SHIPPED"),
-    ("10K+", "ACTIVE USERS"),
-    ("5",    "CUSTOM LLMS"),
-]
+# --------------------------------------------------------------- BRAND / COPY
+NAME = "MUSA.EXE"
+EYEBROW = "HUMAN // AI SYSTEMS BUILDER"
+TAGLINE = "BUILDING BRAINS FOR APPS"
+DESC = "Agents that act. RAG that remembers. Mobile experiences that feel alive."
+STATUS = "NEURAL LINK: ACTIVE"
+COMPANY = "CURRENT NODE: GLIXEN TECHNOLOGIES"
+HANDLE = "@MUHAMMADMUSADEV"
 
-W, H = 1000, 330
-PAD_L, PAD_R = 56, 56
-RIGHT = W - PAD_R
+STATS = [
+    ("10+", "APPS RELEASED"),
+    ("10K+", "HUMANS REACHED"),
+    ("5+", "MODELS TRAINED"),
+    ("03", "YEARS EXPLORING"),
+]
 
 THEMES = {
     "dark": {
-        "bg": "#000000", "display": "#FFFFFF", "primary": "#E8E8E8",
-        "secondary": "#999999", "disabled": "#666666", "borderv": "#333333",
-        "accent": "#D71921", "dot": "#2A2A2A",
+        "bg": "#05050A", "surface": "#0B0D14", "display": "#F7FBFF",
+        "primary": "#D8E5FF", "secondary": "#8091A7", "border": "#1C2740",
+        "grid": "#11182A", "cyan": "#5FFBF1", "violet": "#8B5CF6",
+        "pink": "#FF4FD8", "lime": "#B6FF6A",
     },
     "light": {
-        "bg": "#F5F5F5", "display": "#000000", "primary": "#1A1A1A",
-        "secondary": "#666666", "disabled": "#999999", "borderv": "#CCCCCC",
-        "accent": "#D71921", "dot": "#DADADA",
+        "bg": "#F8FAFF", "surface": "#FFFFFF", "display": "#111225",
+        "primary": "#27304A", "secondary": "#66708A", "border": "#D8DFF2",
+        "grid": "#E9ECF8", "cyan": "#007D91", "violet": "#6D3CE7",
+        "pink": "#D31EB7", "lime": "#4C8F00",
     },
 }
 
-def _b64(fname):
-    return base64.b64encode((FONTS / fname).read_bytes()).decode()
+SM = "'Space Mono', monospace"
+SG = "'Space Grotesk', sans-serif"
+DOTO = "'Doto', 'Space Mono', monospace"
+
+
+def _b64(filename):
+    return base64.b64encode((FONTS / filename).read_bytes()).decode()
+
 
 def font_faces():
     faces = [
-        ("Doto",          "100 900", "Doto-var.woff2"),
-        ("Space Grotesk", "400",     "SpaceGrotesk-400.woff2"),
-        ("Space Grotesk", "500",     "SpaceGrotesk-500.woff2"),
-        ("Space Mono",    "400",     "SpaceMono-400.woff2"),
+        ("Doto", "100 900", "Doto-var.woff2"),
+        ("Space Grotesk", "400", "SpaceGrotesk-400.woff2"),
+        ("Space Grotesk", "500", "SpaceGrotesk-500.woff2"),
+        ("Space Mono", "400", "SpaceMono-400.woff2"),
     ]
-    out = []
-    for fam, wght, f in faces:
-        out.append(f"@font-face{{font-family:'{fam}';font-style:normal;"
-                   f"font-weight:{wght};src:url(data:font/woff2;base64,{_b64(f)}) format('woff2');}}")
+    return "\n".join(
+        f"@font-face{{font-family:'{family}';font-style:normal;font-weight:{weight};"
+        f"src:url(data:font/woff2;base64,{_b64(filename)}) format('woff2');}}"
+        for family, weight, filename in faces
+    )
+
+
+def defs(c, prefix="n"):
+    return f"""
+<defs>
+  <style>{font_faces()}</style>
+  <linearGradient id="{prefix}-signal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="{c['cyan']}"/>
+    <stop offset="0.52" stop-color="{c['violet']}"/>
+    <stop offset="1" stop-color="{c['pink']}"/>
+  </linearGradient>
+  <radialGradient id="{prefix}-aura">
+    <stop offset="0" stop-color="{c['violet']}" stop-opacity=".2"/>
+    <stop offset="1" stop-color="{c['violet']}" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="{prefix}-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none" stroke="{c['grid']}" stroke-width="1"/>
+    <circle cx="1" cy="1" r="1" fill="{c['border']}"/>
+  </pattern>
+  <filter id="{prefix}-glow" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="4" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>"""
+
+
+def frame(width, height, c):
+    return (
+        f'<path d="M18 42V18H42 M{width-42} 18h24v24 M18 {height-42}v24h24 '
+        f'M{width-42} {height-18}h24v-24" fill="none" stroke="{c["border"]}" stroke-width="1.3"/>'
+    )
+
+
+def neural_map(c):
+    nodes = [
+        (742, 86, 6, "cyan"), (843, 68, 4, "pink"),
+        (912, 124, 7, "violet"), (792, 158, 10, "violet"),
+        (885, 202, 5, "cyan"), (736, 230, 4, "pink"),
+        (944, 246, 4, "pink"), (826, 274, 7, "cyan"),
+    ]
+    edges = [(0, 1), (0, 3), (1, 2), (1, 3), (2, 4), (3, 4),
+             (3, 5), (3, 7), (4, 6), (4, 7), (5, 7), (6, 7)]
+    out = [
+        '<circle cx="835" cy="174" r="170" fill="url(#hero-aura)"/>',
+        f'<circle cx="835" cy="174" r="122" fill="none" stroke="{c["border"]}" stroke-dasharray="2 12">'
+        '<animateTransform attributeName="transform" type="rotate" from="0 835 174" to="360 835 174" dur="28s" repeatCount="indefinite"/></circle>',
+        f'<circle cx="835" cy="174" r="82" fill="none" stroke="{c["border"]}" stroke-dasharray="24 16">'
+        '<animateTransform attributeName="transform" type="rotate" from="360 835 174" to="0 835 174" dur="18s" repeatCount="indefinite"/></circle>',
+    ]
+    for a, b in edges:
+        x1, y1, _, _ = nodes[a]
+        x2, y2, _, _ = nodes[b]
+        out.append(f'<path d="M{x1} {y1} L{x2} {y2}" stroke="{c["border"]}" stroke-width="1.3"/>')
+    out.append(
+        '<path d="M742 86L792 158L885 202L826 274" fill="none" stroke="url(#hero-signal)" '
+        'stroke-width="2" stroke-dasharray="8 10" filter="url(#hero-glow)">'
+        '<animate attributeName="stroke-dashoffset" values="36;0" dur="1.6s" repeatCount="indefinite"/></path>'
+    )
+    for index, (x, y, radius, color) in enumerate(nodes):
+        out.append(
+            f'<circle cx="{x}" cy="{y}" r="{radius + 5}" fill="{c[color]}" opacity=".08">'
+            f'<animate attributeName="r" values="{radius+3};{radius+10};{radius+3}" dur="{2.0+index*.18:.2f}s" repeatCount="indefinite"/></circle>'
+        )
+        out.append(
+            f'<circle cx="{x}" cy="{y}" r="{radius}" fill="{c[color]}" filter="url(#hero-glow)">'
+            f'<animate attributeName="opacity" values="1;.35;1" dur="{1.4+index*.16:.2f}s" repeatCount="indefinite"/></circle>'
+        )
+    out.append(
+        f'<text x="835" y="177" text-anchor="middle" font-family="{SM}" font-size="10" '
+        f'letter-spacing="2" fill="{c["display"]}">THINK / BUILD / SHIP</text>'
+    )
     return "\n".join(out)
 
-def corner(x, y, dx, dy, c):
-    return (f'<path d="M{x+dx*16} {y} H{x} V{y+dy*16}" stroke="{c}" '
-            f'stroke-width="1.4" fill="none"/>')
 
 def render(c):
-    p = []
-    p.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
-             f'viewBox="0 0 {W} {H}">')
-    p.append(f'<defs><style>{font_faces()}</style>'
-             f'<pattern id="dg" width="16" height="16" patternUnits="userSpaceOnUse">'
-             f'<circle cx="1" cy="1" r="1" fill="{c["dot"]}"/></pattern></defs>')
-    # canvas + subtle dot grid
-    p.append(f'<rect width="{W}" height="{H}" fill="{c["bg"]}"/>')
-    p.append(f'<rect width="{W}" height="{H}" fill="url(#dg)" opacity="0.55"/>')
-    # corner registration ticks
-    p.append(corner(20, 20, 1, 1, c["borderv"]))
-    p.append(corner(W-20, 20, -1, 1, c["borderv"]))
-    p.append(corner(20, H-20, 1, -1, c["borderv"]))
-    p.append(corner(W-20, H-20, -1, -1, c["borderv"]))
+    width, height = 1000, 390
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        defs(c, "hero"),
+        f'<rect width="{width}" height="{height}" fill="{c["bg"]}"/>',
+        '<rect width="1000" height="390" fill="url(#hero-grid)" opacity=".8"/>',
+        frame(width, height, c), neural_map(c),
+        f'<text x="54" y="49" font-family="{SM}" font-size="11" letter-spacing="2.4" fill="{c["secondary"]}">{escape(EYEBROW)}</text>',
+        f'<circle cx="784" cy="44" r="4" fill="{c["lime"]}" filter="url(#hero-glow)"><animate attributeName="opacity" values="1;.25;1" dur="1.3s" repeatCount="indefinite"/></circle>',
+        f'<text x="798" y="49" font-family="{SM}" font-size="11" letter-spacing="1.5" fill="{c["secondary"]}">{escape(STATUS)}</text>',
+        f'<text x="50" y="135" font-family="{DOTO}" font-size="76" font-weight="700" letter-spacing="1" fill="url(#hero-signal)">{escape(NAME)}</text>',
+        f'<text x="54" y="176" font-family="{SM}" font-size="15" letter-spacing="3" fill="{c["display"]}">{escape(TAGLINE)}</text>',
+        f'<text x="54" y="207" font-family="{SG}" font-size="16" fill="{c["primary"]}">{escape(DESC)}</text>',
+        f'<text x="54" y="238" font-family="{SM}" font-size="10" letter-spacing="1.5" fill="{c["secondary"]}">NOT A BOT. PROBABLY.</text>',
+        '<line x1="54" y1="276" x2="946" y2="276" stroke="url(#hero-signal)" stroke-width="1.5"/>',
+    ]
+    cell_width = 892 / len(STATS)
+    for index, (value, label) in enumerate(STATS):
+        x = 54 + index * cell_width
+        if index:
+            parts.append(f'<line x1="{x:.1f}" y1="300" x2="{x:.1f}" y2="352" stroke="{c["border"]}"/>')
+        tx = x + (18 if index else 0)
+        color = ["cyan", "violet", "pink", "lime"][index]
+        parts.extend([
+            f'<text x="{tx:.1f}" y="327" font-family="{SM}" font-size="27" fill="{c[color]}">{escape(value)}</text>',
+            f'<text x="{tx:.1f}" y="348" font-family="{SM}" font-size="10" letter-spacing="1.5" fill="{c["secondary"]}">{escape(label)}</text>',
+        ])
+    parts.extend([
+        f'<text x="54" y="375" font-family="{SM}" font-size="9" letter-spacing="1.3" fill="{c["secondary"]}">{escape(COMPANY)}</text>',
+        f'<text x="946" y="375" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.3" fill="{c["secondary"]}">{escape(HANDLE)}</text>',
+        '</svg>',
+    ])
+    return "\n".join(parts)
 
-    SM = "'Space Mono', monospace"
-    SG = "'Space Grotesk', sans-serif"
-    DOTO = "'Doto', 'Space Mono', monospace"
-
-    # --- tertiary top labels ---
-    p.append(f'<text x="{PAD_L}" y="54" font-family="{SM}" font-size="12" '
-             f'letter-spacing="3" fill="{c["secondary"]}">{escape(KICKER)}</text>')
-    # status, top-right, with red signal dot
-    st_w = len(STATUS) * 7.4 + 16
-    sx = RIGHT - st_w
-    p.append(f'<circle cx="{sx+4:.0f}" cy="50" r="4" fill="{c["accent"]}">'
-             f'<animate attributeName="opacity" values="1;1;0.18;1" '
-             f'keyTimes="0;0.55;0.66;1" dur="1.7s" repeatCount="indefinite"/></circle>')
-    p.append(f'<text x="{sx+16:.0f}" y="54" font-family="{SM}" font-size="12" '
-             f'letter-spacing="2" fill="{c["secondary"]}">{escape(STATUS)}</text>')
-
-    # --- PRIMARY: Doto dot-matrix hero name ---
-    p.append(f'<text x="{PAD_L-2}" y="138" font-family="{DOTO}" font-size="66" '
-             f'font-weight="600" letter-spacing="1" fill="{c["display"]}">{escape(NAME)}</text>')
-
-    # --- secondary description ---
-    p.append(f'<text x="{PAD_L}" y="176" font-family="{SG}" font-size="16.5" '
-             f'font-weight="400" fill="{c["primary"]}">{escape(DESC)}</text>')
-
-    # --- instrument stat row ---
-    top, bot = 232, 288
-    vy, ly = 268, 285
-    cellw = (W - PAD_L - PAD_R) / len(STATS)
-    for i, (val, lab) in enumerate(STATS):
-        cx = PAD_L + i * cellw
-        if i > 0:
-            p.append(f'<line x1="{cx:.0f}" y1="{top}" x2="{cx:.0f}" y2="{bot}" '
-                     f'stroke="{c["borderv"]}" stroke-width="1"/>')
-        px = cx + (18 if i > 0 else 0)
-        p.append(f'<text x="{px:.0f}" y="{vy}" font-family="{SM}" font-size="30" '
-                 f'fill="{c["display"]}">{escape(val)}</text>')
-        p.append(f'<text x="{px:.0f}" y="{ly}" font-family="{SM}" font-size="11" '
-                 f'letter-spacing="1.5" fill="{c["secondary"]}">{escape(lab)}</text>')
-
-    # --- bottom meta line ---
-    p.append(f'<text x="{PAD_L}" y="{H-22}" font-family="{SM}" font-size="11" '
-             f'letter-spacing="1.5" fill="{c["disabled"]}">{escape(COMPANY)}</text>')
-    p.append(f'<text x="{RIGHT}" y="{H-22}" font-family="{SM}" font-size="11" '
-             f'letter-spacing="1.5" text-anchor="end" fill="{c["disabled"]}">{escape(HANDLE)}</text>')
-
-    p.append("</svg>")
-    return "\n".join(p)
 
 def render_status(c):
-    SW, SH = 1000, 54
-    SM = "'Space Mono', monospace"
-    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{SW}" height="{SH}" viewBox="0 0 {SW} {SH}">']
-    p.append(f'<defs><style>{font_faces()}</style></defs>')
-    p.append(f'<rect x="1" y="1" width="{SW-2}" height="{SH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
-    p.append(f'<circle cx="28" cy="27" r="4.5" fill="#4A9E5C"><animate attributeName="opacity" '
-             f'values="1;1;0.25;1" keyTimes="0;0.5;0.62;1" dur="1.8s" repeatCount="indefinite"/></circle>')
-    segs = [("STATUS", "BUILDING"), ("FOCUS", "AI AGENTS + RAG"),
-            ("TZ", "PKT / UTC+5"), ("REPLIES", "< 24H")]
-    fs = 12.5
-    cw = fs * 0.605
-    x = 44
-    for i, (lab, val) in enumerate(segs):
-        if i > 0:
-            p.append(f'<line x1="{x-14:.0f}" y1="16" x2="{x-14:.0f}" y2="38" stroke="{c["borderv"]}"/>')
-        p.append(f'<text x="{x:.0f}" y="31" font-family="{SM}" font-size="{fs}" letter-spacing="1">'
-                 f'<tspan fill="{c["secondary"]}">{escape(lab)}</tspan>'
-                 f'<tspan dx="7" fill="{c["display"]}">{escape(val)}</tspan></text>')
-        x += (len(lab) + len(val)) * cw + 7 + 28
-    p.append('</svg>')
-    return "\n".join(p)
+    bars = []
+    for i, bar_height in enumerate([8, 16, 28, 20, 38, 24, 32, 14, 26, 10]):
+        bars.append(
+            f'<rect x="{795+i*13}" y="{34-bar_height/2:.1f}" width="6" height="{bar_height}" rx="3" fill="url(#status-signal)" opacity="{.35 + i*.055:.2f}">'
+            f'<animate attributeName="height" values="{bar_height};{max(6, 44-bar_height)};{bar_height}" dur="{1.1+i*.09:.2f}s" repeatCount="indefinite"/></rect>'
+        )
+    return "\n".join([
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="68" viewBox="0 0 1000 68">', defs(c, "status"),
+        f'<rect x="1" y="1" width="998" height="66" rx="9" fill="{c["surface"]}" stroke="{c["border"]}"/>',
+        f'<circle cx="28" cy="34" r="5" fill="{c["lime"]}" filter="url(#status-glow)"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle>',
+        f'<text x="44" y="39" font-family="{SM}" font-size="12" letter-spacing="1.5" fill="{c["display"]}">SYSTEM ONLINE</text>',
+        f'<line x1="188" y1="17" x2="188" y2="51" stroke="{c["border"]}"/>',
+        f'<text x="213" y="30" font-family="{SM}" font-size="9" letter-spacing="1.5" fill="{c["secondary"]}">LOADED CHANNELS</text>',
+        f'<text x="213" y="47" font-family="{SM}" font-size="11" fill="{c["cyan"]}">AGENTS</text>',
+        f'<text x="295" y="47" font-family="{SM}" font-size="11" fill="{c["violet"]}">RAG MEMORY</text>',
+        f'<text x="414" y="47" font-family="{SM}" font-size="11" fill="{c["pink"]}">MOBILE AI</text>',
+        f'<text x="555" y="39" font-family="{SM}" font-size="10" letter-spacing="1.4" fill="{c["secondary"]}">MODE:</text>',
+        f'<text x="604" y="39" font-family="{SM}" font-size="11" letter-spacing="1.4" fill="{c["display"]}">BUILD / BREAK / LEARN</text>',
+        *bars,
+        f'<text x="948" y="39" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1" fill="{c["secondary"]}">SIGNAL 98%</text>',
+        '</svg>',
+    ])
+
 
 def render_divider(c):
-    DW, DH = 1000, 22
-    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{DW}" height="{DH}" viewBox="0 0 {DW} {DH}">']
-    p.append(f'<line x1="4" y1="4" x2="4" y2="18" stroke="{c["borderv"]}" stroke-width="1.4"/>')
-    p.append(f'<line x1="{DW-4}" y1="4" x2="{DW-4}" y2="18" stroke="{c["borderv"]}" stroke-width="1.4"/>')
-    x = 16
-    while x <= DW - 16:
-        p.append(f'<circle cx="{x}" cy="11" r="1.4" fill="{c["borderv"]}"/>')
-        x += 15
-    # scanning pulse: a bright dot sweeps left -> right along the line
-    p.append(f'<circle cy="11" r="2.4" fill="{c["display"]}">'
-             f'<animate attributeName="cx" values="16;{DW-16}" dur="3.6s" '
-             f'calcMode="linear" repeatCount="indefinite"/>'
-             f'<animate attributeName="opacity" values="0;0.9;0.9;0" '
-             f'keyTimes="0;0.06;0.94;1" dur="3.6s" repeatCount="indefinite"/></circle>')
-    p.append('</svg>')
-    return "\n".join(p)
+    path = "M18 17 H170 L194 7 L218 27 L246 11 L270 22 L292 17 H982"
+    return "\n".join([
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="34" viewBox="0 0 1000 34">', defs(c, "divider"),
+        f'<path d="{path}" fill="none" stroke="{c["border"]}" stroke-width="1.3"/>',
+        f'<path d="{path}" fill="none" stroke="url(#divider-signal)" stroke-width="2" stroke-dasharray="90 900" filter="url(#divider-glow)"><animate attributeName="stroke-dashoffset" values="0;-1000" dur="3.2s" repeatCount="indefinite"/></path>',
+        f'<circle cx="18" cy="17" r="3" fill="{c["cyan"]}"/><circle cx="982" cy="17" r="3" fill="{c["pink"]}"/>', '</svg>',
+    ])
 
-def render_achievements(c):
-    AW = 1000
-    SM = "'Space Mono', monospace"
-    # (name, tier, fill 0..1, count)
-    rows = [
-        ("STARGAZER",  "MASTER",   1.00, "1491"),
-        ("MAINTAINER", "MASTER",   1.00, "13860"),
-        ("DEVELOPER",  "GREAT",    0.82, "37"),
-        ("MEMBER",     "SUPER",    0.60, "8"),
-        ("EXPLORER",   "UNLOCKED", 0.35, "NEW"),
-    ]
-    rowh, top = 46, 60
-    AH = top + len(rows) * rowh + 22
-    nseg, sw, gap, bx = 24, 20, 4, 300
-    bw = nseg * (sw + gap) - gap
-    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{AW}" height="{AH}" viewBox="0 0 {AW} {AH}">']
-    p.append(f'<defs><style>{font_faces()}</style></defs>')
-    p.append(f'<rect x="1" y="1" width="{AW-2}" height="{AH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
-    p.append(corner(18, 18, 1, 1, c["borderv"]))
-    p.append(corner(AW-18, 18, -1, 1, c["borderv"]))
-    p.append(corner(18, AH-18, 1, -1, c["borderv"]))
-    p.append(corner(AW-18, AH-18, -1, -1, c["borderv"]))
-    p.append(f'<text x="30" y="36" font-family="{SM}" font-size="12" letter-spacing="3" '
-             f'fill="{c["secondary"]}">ACHIEVEMENTS</text>')
-    p.append(f'<text x="{AW-30}" y="36" font-family="{SM}" font-size="11" letter-spacing="2" '
-             f'text-anchor="end" fill="{c["disabled"]}">GITHUB</text>')
-    for r, (name, tier, pct, count) in enumerate(rows):
-        y = top + r * rowh
-        if r > 0:
-            p.append(f'<line x1="30" y1="{y}" x2="{AW-30}" y2="{y}" stroke="{c["borderv"]}" stroke-width="1"/>')
-        p.append(f'<text x="30" y="{y+22}" font-family="{SM}" font-size="16" fill="{c["display"]}">{name}</text>')
-        p.append(f'<text x="30" y="{y+37}" font-family="{SM}" font-size="9" letter-spacing="1.5" '
-                 f'fill="{c["secondary"]}">{tier}</text>')
-        filled = round(pct * nseg)
-        by = y + 15
-        for i in range(nseg):
-            sx = bx + i * (sw + gap)
-            if i < filled:
-                delay = 0.15 + r * 0.28 + i * 0.022
-                p.append(f'<rect x="{sx}" y="{by}" width="{sw}" height="12" fill="{c["display"]}" opacity="0">'
-                         f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.2f}s" '
-                         f'dur="0.18s" fill="freeze"/></rect>')
-            else:
-                p.append(f'<rect x="{sx}" y="{by}" width="{sw}" height="12" fill="none" '
-                         f'stroke="{c["borderv"]}" stroke-width="1"/>')
-        p.append(f'<text x="{AW-30}" y="{y+27}" font-family="{SM}" font-size="15" '
-                 f'text-anchor="end" fill="{c["display"]}">{count}</text>')
-    p.append('</svg>')
-    return "\n".join(p)
 
 def render_stack(c):
-    SW = 1000
-    SM = "'Space Mono', monospace"
-    groups = [
-        ("AI / ML", ["LLMs · AI Agents · RAG · Fine-Tuning · Embeddings · Prompt Engineering",
-                     "Vector DBs · OpenAI · Ollama · RunPod · LangChain · Hugging Face"]),
-        ("MOBILE", ["Flutter · Dart · React Native · Expo"]),
-        ("BACKEND", ["Node.js · Express · REST APIs · JWT"]),
-        ("DATABASES", ["PostgreSQL · MongoDB · Firebase · pgvector · MySQL"]),
-        ("LANG / TOOLS", ["TypeScript · JavaScript · Python · Git · GitHub Actions · Docker · Postman"]),
+    modules = [
+        ("01", "INTELLIGENCE", "LLMs  ·  AGENTS  ·  RAG  ·  FINE-TUNING", "cyan"),
+        ("02", "MODEL LAB", "OLLAMA  ·  RUNPOD  ·  OPENAI  ·  HUGGING FACE", "violet"),
+        ("03", "MOBILE SHELL", "FLUTTER  ·  REACT NATIVE  ·  EXPO  ·  DART", "pink"),
+        ("04", "BACKBONE", "NODE.JS  ·  EXPRESS  ·  REST  ·  DOCKER", "lime"),
+        ("05", "MEMORY", "POSTGRES  ·  PGVECTOR  ·  MONGODB  ·  FIREBASE", "cyan"),
+        ("06", "LANGUAGE", "TYPESCRIPT  ·  PYTHON  ·  JAVASCRIPT", "violet"),
     ]
-    lh, gg, top = 24, 18, 34
-    labelx, itemx = 30, 192
-    body, y = [], top
-    for label, lines in groups:
-        body.append(f'<circle cx="{labelx+3}" cy="{y+9}" r="2.6" fill="{c["display"]}"/>')
-        body.append(f'<text x="{labelx+14}" y="{y+14}" font-family="{SM}" font-size="11" '
-                    f'letter-spacing="2" fill="{c["secondary"]}">{label}</text>')
-        for j, line in enumerate(lines):
-            body.append(f'<text x="{itemx}" y="{y+14 + j*lh}" font-family="{SM}" font-size="13.5" '
-                        f'fill="{c["primary"]}">{escape(line)}</text>')
-        y += len(lines) * lh + gg
-    SH = y + 10
-    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{SW}" height="{SH}" viewBox="0 0 {SW} {SH}">']
-    p.append(f'<defs><style>{font_faces()}</style></defs>')
-    p.append(f'<rect x="1" y="1" width="{SW-2}" height="{SH-2}" fill="none" stroke="{c["borderv"]}" stroke-width="1"/>')
-    p += [corner(18, 18, 1, 1, c["borderv"]), corner(SW-18, 18, -1, 1, c["borderv"]),
-          corner(18, SH-18, 1, -1, c["borderv"]), corner(SW-18, SH-18, -1, -1, c["borderv"])]
-    p.append(f'<line x1="{itemx-26}" y1="20" x2="{itemx-26}" y2="{SH-20}" stroke="{c["borderv"]}" stroke-width="1"/>')
-    p += body
-    p.append('</svg>')
-    return "\n".join(p)
+    parts = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="322" viewBox="0 0 1000 322">', defs(c, "stack"),
+        f'<rect x="1" y="1" width="998" height="320" rx="12" fill="{c["surface"]}" stroke="{c["border"]}"/>',
+        '<rect x="1" y="1" width="998" height="320" rx="12" fill="url(#stack-grid)" opacity=".45"/>',
+        f'<text x="32" y="38" font-family="{DOTO}" font-size="22" font-weight="650" letter-spacing="2" fill="{c["display"]}">NEURAL TOOLBELT</text>',
+        f'<text x="968" y="36" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">06 MODULES LOADED</text>',
+        '<line x1="32" y1="55" x2="968" y2="55" stroke="url(#stack-signal)" stroke-width="1"/>',
+    ]
+    for i, (number, label, tech, color) in enumerate(modules):
+        x = 32 + (i % 2) * 476
+        y = 76 + (i // 2) * 76
+        parts.extend([
+            f'<rect x="{x}" y="{y}" width="450" height="58" rx="8" fill="{c["bg"]}" stroke="{c["border"]}"/>',
+            f'<circle cx="{x+22}" cy="{y+29}" r="7" fill="{c[color]}" opacity=".18"><animate attributeName="r" values="7;12;7" dur="{1.7+i*.2:.2f}s" repeatCount="indefinite"/></circle>',
+            f'<circle cx="{x+22}" cy="{y+29}" r="3" fill="{c[color]}"/>',
+            f'<text x="{x+42}" y="{y+22}" font-family="{SM}" font-size="9" letter-spacing="1.5" fill="{c[color]}">{number} / {label}</text>',
+            f'<text x="{x+42}" y="{y+42}" font-family="{SM}" font-size="10.5" fill="{c["primary"]}">{escape(tech)}</text>',
+        ])
+    parts.extend([
+        f'<text x="32" y="302" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">STACK CHANGES. CURIOSITY DOESN\'T.</text>',
+        f'<text x="968" y="302" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">READY FOR NEXT EXPERIMENT →</text>', '</svg>',
+    ])
+    return "\n".join(parts)
+
+
+def render_achievements(c):
+    cards = [
+        ("10+", "APPS RELEASED", "FROM IDEA → STORE", "cyan"),
+        ("10K+", "HUMANS REACHED", "REAL USERS / REAL CHAOS", "violet"),
+        ("5+", "MODELS TRAINED", "CUSTOM WEIGHTS / REAL TASKS", "pink"),
+        ("03", "YEARS EXPLORING", "STILL ASKING WHY", "lime"),
+    ]
+    parts = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="250" viewBox="0 0 1000 250">', defs(c, "impact"),
+        f'<rect x="1" y="1" width="998" height="248" rx="12" fill="{c["surface"]}" stroke="{c["border"]}"/>',
+        f'<text x="32" y="38" font-family="{DOTO}" font-size="22" font-weight="650" letter-spacing="2" fill="{c["display"]}">SIGNAL OUTPUT</text>',
+        f'<text x="968" y="36" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">REAL PRODUCTS &gt; PRETTY DEMOS</text>',
+        '<line x1="32" y1="55" x2="968" y2="55" stroke="url(#impact-signal)"/>',
+    ]
+    for i, (value, label, sub, color) in enumerate(cards):
+        x = 32 + i * 236
+        parts.extend([
+            f'<rect x="{x}" y="77" width="220" height="120" rx="10" fill="{c["bg"]}" stroke="{c["border"]}"/>',
+            f'<path d="M{x+16} 93h24" stroke="{c[color]}" stroke-width="3"/>',
+            f'<text x="{x+16}" y="139" font-family="{DOTO}" font-size="34" font-weight="700" fill="{c[color]}">{value}</text>',
+            f'<text x="{x+16}" y="165" font-family="{SM}" font-size="10" letter-spacing="1.2" fill="{c["display"]}">{label}</text>',
+            f'<text x="{x+16}" y="184" font-family="{SM}" font-size="8" letter-spacing="1" fill="{c["secondary"]}">{escape(sub)}</text>',
+        ])
+    parts.extend([
+        f'<path d="M32 224H188l16-10 18 18 20-12 18 4h708" fill="none" stroke="{c["border"]}"/>',
+        '<path d="M32 224H188l16-10 18 18 20-12 18 4h708" fill="none" stroke="url(#impact-signal)" stroke-width="2" stroke-dasharray="70 900"><animate attributeName="stroke-dashoffset" values="0;-970" dur="3s" repeatCount="indefinite"/></path>',
+        '</svg>',
+    ])
+    return "\n".join(parts)
+
 
 def main():
-    for name, c in THEMES.items():
-        (HERE / f"{name}.svg").write_text(render(c), encoding="utf-8")
-        (HERE / f"status-{name}.svg").write_text(render_status(c), encoding="utf-8")
-        (HERE / f"divider-{name}.svg").write_text(render_divider(c), encoding="utf-8")
-        (HERE / f"stack-{name}.svg").write_text(render_stack(c), encoding="utf-8")
-        (HERE / f"achievements-{name}.svg").write_text(render_achievements(c), encoding="utf-8")
-        print(f"wrote {name} set")
+    for theme, colors in THEMES.items():
+        (HERE / f"{theme}.svg").write_text(render(colors), encoding="utf-8")
+        (HERE / f"status-{theme}.svg").write_text(render_status(colors), encoding="utf-8")
+        (HERE / f"divider-{theme}.svg").write_text(render_divider(colors), encoding="utf-8")
+        (HERE / f"stack-{theme}.svg").write_text(render_stack(colors), encoding="utf-8")
+        (HERE / f"achievements-{theme}.svg").write_text(render_achievements(colors), encoding="utf-8")
+        print(f"wrote {theme} NEURO//MUSA set")
+
 
 if __name__ == "__main__":
     main()
