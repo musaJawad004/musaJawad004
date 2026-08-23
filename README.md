@@ -94,12 +94,16 @@ I am **Muhammad Musa**, an **AI Engineer and LLM Engineer in Pakistan** building
 
 <div align="center">
 
-### `// OPEN TRANSMISSION`
+### `// OPEN FOR PROJECTS`
 
-**Got a strange AI idea, an app that needs a brain, or something fun to build?**
+**Freelance AI and mobile developer available at $20/hour.**
 
-[`SEND A SIGNAL`](mailto:musaJawad004@gmail.com) &nbsp;·&nbsp; [`SEE THE LAB`](https://itsmusa.vercel.app/) &nbsp;·&nbsp; [`CONNECT`](https://www.linkedin.com/in/muhammadmusadev/)
+`AI AGENTS` &nbsp;·&nbsp; `RAG SYSTEMS` &nbsp;·&nbsp; `LLM INTEGRATIONS` &nbsp;·&nbsp; `FLUTTER` &nbsp;·&nbsp; `REACT NATIVE` &nbsp;·&nbsp; `NODE.JS APIs`
 
-<sub>human-made · machine-assisted · curiosity-powered</sub>
+Have a product idea, an existing app that needs AI, or a focused development task? Tell me what you are building and what needs to ship.
+
+[`EMAIL ME`](mailto:musaJawad004@gmail.com) &nbsp;·&nbsp; [`MESSAGE ON LINKEDIN`](https://www.linkedin.com/in/muhammadmusadev/) &nbsp;·&nbsp; [`VIEW PORTFOLIO`](https://itsmusa.vercel.app/)
+
+<sub>OPEN TO FREELANCE PROJECTS · REMOTE COLLABORATION · $20 USD / HOUR</sub>
 
 </div>
