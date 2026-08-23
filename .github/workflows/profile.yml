@@ -45,6 +45,7 @@ jobs:
             stack-dark.svg stack-light.svg \
             achievements-dark.svg achievements-light.svg \
             bio004-hero-dark.svg bio004-hero-light.svg \
+            bio004-hero-clean-dark.svg bio004-hero-clean-light.svg \
             bio004-status-dark.svg bio004-status-light.svg \
             bio004-divider-dark.svg bio004-divider-light.svg \
             bio004-stack-dark.svg bio004-stack-light.svg \

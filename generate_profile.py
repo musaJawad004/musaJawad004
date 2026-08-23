@@ -20,8 +20,6 @@ EYEBROW = "BIO-COMPUTE LAB / HUMAN NODE 004"
 TAGLINE = "I TEACH APPS TO THINK"
 DESC = "Agents that act. RAG that remembers. Mobile experiences that feel alive."
 STATUS = "SPECIMEN AWAKE"
-COMPANY = "HOST LAB: GLIXEN TECHNOLOGIES"
-HANDLE = "@MUHAMMADMUSADEV"
 
 STATS = [
     ("10+", "APPS RELEASED"),
@@ -180,8 +178,6 @@ def render(c):
             f'<text x="{tx:.1f}" y="348" font-family="{SM}" font-size="10" letter-spacing="1.5" fill="{c["secondary"]}">{escape(label)}</text>',
         ])
     parts.extend([
-        f'<text x="54" y="375" font-family="{SM}" font-size="9" letter-spacing="1.3" fill="{c["secondary"]}">{escape(COMPANY)}</text>',
-        f'<text x="946" y="375" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.3" fill="{c["secondary"]}">{escape(HANDLE)}</text>',
         '</svg>',
     ])
     return "\n".join(parts)
@@ -310,6 +306,7 @@ def main():
             f"stack-{theme}.svg": stack,
             f"achievements-{theme}.svg": results,
             f"bio004-hero-{theme}.svg": hero,
+            f"bio004-hero-clean-{theme}.svg": hero,
             f"bio004-status-{theme}.svg": status,
             f"bio004-divider-{theme}.svg": divider,
             f"bio004-stack-{theme}.svg": stack,

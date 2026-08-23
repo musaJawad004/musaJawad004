@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/bio004-hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/bio004-hero-light.svg">
-  <img alt="MUSA 004 | AI Engineer, LLM Engineer and Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/bio004-hero-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/bio004-hero-clean-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/bio004-hero-clean-light.svg">
+  <img alt="MUSA 004 | AI Engineer, LLM Engineer and Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/bio004-hero-clean-dark.svg" width="100%">
 </picture>
 
 [`ENTER PORTFOLIO`](https://itsmusa.vercel.app/) &nbsp;·&nbsp; [`LINKEDIN SIGNAL`](https://www.linkedin.com/in/muhammadmusadev/) &nbsp;·&nbsp; [`OPEN CHANNEL`](mailto:musaJawad004@gmail.com)
