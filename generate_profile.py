@@ -294,11 +294,29 @@ def render_achievements(c):
 
 def main():
     for theme, colors in THEMES.items():
-        (HERE / f"{theme}.svg").write_text(render(colors), encoding="utf-8")
-        (HERE / f"status-{theme}.svg").write_text(render_status(colors), encoding="utf-8")
-        (HERE / f"divider-{theme}.svg").write_text(render_divider(colors), encoding="utf-8")
-        (HERE / f"stack-{theme}.svg").write_text(render_stack(colors), encoding="utf-8")
-        (HERE / f"achievements-{theme}.svg").write_text(render_achievements(colors), encoding="utf-8")
+        hero = render(colors)
+        status = render_status(colors)
+        divider = render_divider(colors)
+        stack = render_stack(colors)
+        results = render_achievements(colors)
+
+        # Keep the legacy paths current, but publish the V2 artwork under new
+        # cache-proof paths. GitHub's image proxy can retain SVG bytes even when
+        # a query string changes, while a new filename forces a fresh request.
+        outputs = {
+            f"{theme}.svg": hero,
+            f"status-{theme}.svg": status,
+            f"divider-{theme}.svg": divider,
+            f"stack-{theme}.svg": stack,
+            f"achievements-{theme}.svg": results,
+            f"bio004-hero-{theme}.svg": hero,
+            f"bio004-status-{theme}.svg": status,
+            f"bio004-divider-{theme}.svg": divider,
+            f"bio004-stack-{theme}.svg": stack,
+            f"bio004-results-{theme}.svg": results,
+        }
+        for filename, artwork in outputs.items():
+            (HERE / filename).write_text(artwork, encoding="utf-8")
         print(f"wrote {theme} BIOCOMPUTE//MUSA set")
 
 

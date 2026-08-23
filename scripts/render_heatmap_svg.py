@@ -14,7 +14,10 @@ import os
 
 HERE = os.path.dirname(__file__)
 IN_PATH = os.path.join(HERE, "..", "data", "contributions.json")
-OUT_PATH = os.path.join(HERE, "..", "musa-heatmap.svg")
+OUT_PATHS = [
+    os.path.join(HERE, "..", "musa-heatmap.svg"),
+    os.path.join(HERE, "..", "bio004-activity.svg"),
+]
 
 # BIOCOMPUTE//MUSA ramp: dormant tissue -> acid signal -> cobalt peak.
 PALETTE = ["#211E17", "#3A4020", "#6A7D20", "#D7FF3F", "#FF633C", "#6376FF"]
@@ -198,6 +201,7 @@ def render(data):
 if __name__ == "__main__":
     data = json.load(open(IN_PATH))
     svg = render(data)
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
-        f.write(svg)
-    print(f"wrote {OUT_PATH} ({len(svg)} bytes)")
+    for out_path in OUT_PATHS:
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(svg)
+        print(f"wrote {out_path} ({len(svg)} bytes)")

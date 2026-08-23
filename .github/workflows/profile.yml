@@ -44,6 +44,11 @@ jobs:
             divider-dark.svg divider-light.svg \
             stack-dark.svg stack-light.svg \
             achievements-dark.svg achievements-light.svg \
-            musa-heatmap.svg data/contributions.json
+            bio004-hero-dark.svg bio004-hero-light.svg \
+            bio004-status-dark.svg bio004-status-light.svg \
+            bio004-divider-dark.svg bio004-divider-light.svg \
+            bio004-stack-dark.svg bio004-stack-light.svg \
+            bio004-results-dark.svg bio004-results-light.svg \
+            musa-heatmap.svg bio004-activity.svg data/contributions.json
           git diff --cached --quiet || git commit -m "chore: refresh profile card [skip ci]"
           git push
