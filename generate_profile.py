@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate the BIOCOMPUTE//MUSA V2 GitHub profile artwork.
+"""Generate the BIOCOMPUTE//MUSA GitHub profile artwork.
 
-The profile behaves like a living laboratory specimen: warm black, acid green,
-signal orange, cobalt, scan lines, neural traces, and asymmetric instrument
-layouts. Fonts are embedded so every panel renders consistently on GitHub.
+The profile behaves like a living neural interface: midnight navy, binary cyan,
+electric blue, ice highlights, scan lines, neural traces, and asymmetric
+instrument layouts. Fonts are embedded for consistent rendering on GitHub.
 """
 
 import base64
@@ -30,16 +30,16 @@ STATS = [
 
 THEMES = {
     "dark": {
-        "bg": "#0D0C09", "surface": "#15130F", "display": "#F3EEDF",
-        "primary": "#D8D0BC", "secondary": "#8C8474", "border": "#393326",
-        "grid": "#211E17", "cyan": "#D7FF3F", "violet": "#FF633C",
-        "pink": "#6376FF", "lime": "#F5BF3B",
+        "bg": "#050A10", "surface": "#0A121C", "display": "#EAFBFF",
+        "primary": "#BCD7E2", "secondary": "#6D8A99", "border": "#214256",
+        "grid": "#0E2532", "cyan": "#66F7FF", "violet": "#29A9FF",
+        "pink": "#8B7CFF", "lime": "#D5F7FF",
     },
     "light": {
-        "bg": "#F0EBDD", "surface": "#F8F3E7", "display": "#17140E",
-        "primary": "#393328", "secondary": "#746C5C", "border": "#C6BDA9",
-        "grid": "#DDD5C4", "cyan": "#5A7900", "violet": "#C83C1B",
-        "pink": "#2E43D6", "lime": "#9A6500",
+        "bg": "#F2F8FA", "surface": "#E8F2F6", "display": "#07121B",
+        "primary": "#294A59", "secondary": "#668491", "border": "#A9C6D2",
+        "grid": "#D5E7ED", "cyan": "#007F8C", "violet": "#006ECB",
+        "pink": "#6653D4", "lime": "#1298AB",
     },
 }
 
@@ -311,6 +311,11 @@ def main():
             f"bio004-divider-{theme}.svg": divider,
             f"bio004-stack-{theme}.svg": stack,
             f"bio004-results-{theme}.svg": results,
+            f"cipher-hero-{theme}.svg": hero,
+            f"cipher-status-{theme}.svg": status,
+            f"cipher-divider-{theme}.svg": divider,
+            f"cipher-stack-{theme}.svg": stack,
+            f"cipher-results-{theme}.svg": results,
         }
         for filename, artwork in outputs.items():
             (HERE / filename).write_text(artwork, encoding="utf-8")

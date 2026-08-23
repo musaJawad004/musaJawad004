@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-hero-clean-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-hero-clean-light.svg">
-  <img alt="MUSA 004 | AI Engineer, LLM Engineer and Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-hero-clean-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-hero-light.svg">
+  <img alt="MUSA 004 | AI Engineer, LLM Engineer and Mobile App Developer" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-hero-dark.svg" width="100%">
 </picture>
 
 [`ENTER PORTFOLIO`](https://itsmusa.vercel.app/) &nbsp;·&nbsp; [`LINKEDIN SIGNAL`](https://www.linkedin.com/in/muhammadmusadev/) &nbsp;·&nbsp; [`OPEN CHANNEL`](mailto:musaJawad004@gmail.com)
@@ -18,9 +18,9 @@
 -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-status-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-status-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-status-dark.svg" alt="Biocompute system online with AI agents, RAG memory and mobile AI processes" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-status-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-status-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-status-dark.svg" alt="Biocompute system online with AI agents, RAG memory and mobile AI processes" width="100%">
 </picture>
 
 ## `> whoami`
@@ -38,9 +38,9 @@ I am **Muhammad Musa**, an **AI Engineer and LLM Engineer in Pakistan** building
 > The mission: make AI feel less like a feature and more like a living part of the product.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg" alt="" width="100%">
 </picture>
 
 ## `~/current_experiments`
@@ -53,42 +53,42 @@ I am **Muhammad Musa**, an **AI Engineer and LLM Engineer in Pakistan** building
 ```
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg" alt="" width="100%">
 </picture>
 
 ## `~/specimen_inventory`
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-stack-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-stack-dark.svg" alt="AI engineering technology stack with LLMs, AI agents, RAG, Flutter, React Native, Node.js, PostgreSQL, TypeScript and Python" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-stack-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-stack-dark.svg" alt="AI engineering technology stack with LLMs, AI agents, RAG, Flutter, React Native, Node.js, PostgreSQL, TypeScript and Python" width="100%">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg" alt="" width="100%">
 </picture>
 
 ## `~/field_results`
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-results-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-results-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-results-dark.svg" alt="AI engineer results with 10+ apps released, 10K+ users reached and 5+ custom LLM models trained" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-results-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-results-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-results-dark.svg" alt="AI engineer results with 10+ apps released, 10K+ users reached and 5+ custom LLM models trained" width="100%">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-light.svg">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/bio004-divider-dark.svg" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-light.svg">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/main/cipher-divider-dark.svg" alt="" width="100%">
 </picture>
 
 ## `~/activity_stream`
 
-<img src="./bio004-activity.svg" width="100%" alt="Muhammad Musa GitHub contribution activity stream, refreshed automatically" />
+<img src="./cipher-activity.svg" width="100%" alt="Muhammad Musa GitHub contribution activity stream, refreshed automatically" />
 
 <br>
 

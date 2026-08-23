@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-Render data/contributions.json (produced by fetch_contributions.py) as a proper
-GitHub-style contribution heatmap SVG: a grid of rounded, colored BOXES in the
+Render data/contributions.json (produced by fetch_contributions.py) as a
+GitHub-style contribution heatmap SVG: a grid of rounded, colored boxes in the
 classic 53-week x 7-day calendar, revealed once with a diagonal line-after-line
-slide-down (CSS keyframes, plays on load then freezes -- no looping "glow"), a
-Less->More legend, and a real stats footer.
+slide-down animation, a Less-to-More legend, and a real stats footer.
 
 Run by .github/workflows/update-profile-art.yml after fetch_contributions.py.
 """
@@ -17,10 +16,11 @@ IN_PATH = os.path.join(HERE, "..", "data", "contributions.json")
 OUT_PATHS = [
     os.path.join(HERE, "..", "musa-heatmap.svg"),
     os.path.join(HERE, "..", "bio004-activity.svg"),
+    os.path.join(HERE, "..", "cipher-activity.svg"),
 ]
 
-# BIOCOMPUTE//MUSA ramp: dormant tissue -> acid signal -> cobalt peak.
-PALETTE = ["#211E17", "#3A4020", "#6A7D20", "#D7FF3F", "#FF633C", "#6376FF"]
+# Avatar-matched ramp: dormant navy -> binary cyan -> violet peak.
+PALETTE = ["#0E2532", "#123B50", "#165E79", "#178EAB", "#34CDE2", "#8B7CFF"]
 
 CELL = 12
 GAP = 3
@@ -30,14 +30,14 @@ LEFT_LABEL_W = 30
 TOP_LABEL_H = 20
 TITLEBAR_H = 30
 
-BG = "#0D0C09"
-BG2 = "#15130F"
-FRAME = "#393326"
-MUTED = "#8C8474"
-TEXT = "#D8D0BC"
-ACCENT = "#D7FF3F"
-GREEN = "#FF633C"
-GOLD = "#6376FF"
+BG = "#050A10"
+BG2 = "#0A121C"
+FRAME = "#214256"
+MUTED = "#6D8A99"
+TEXT = "#BCD7E2"
+ACCENT = "#66F7FF"
+GREEN = "#29A9FF"
+GOLD = "#8B7CFF"
 
 # reveal timing (one-shot)
 COL_T = 0.018   # per-column delay contribution (left -> right sweep)
@@ -119,8 +119,8 @@ def render(data):
         '<defs>'
         f'<linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient>'
-        '<radialGradient id="aura"><stop offset="0" stop-color="#FF633C" stop-opacity=".12"/>'
-        '<stop offset="1" stop-color="#FF633C" stop-opacity="0"/></radialGradient>'
+        '<radialGradient id="aura"><stop offset="0" stop-color="#29A9FF" stop-opacity=".12"/>'
+        '<stop offset="1" stop-color="#29A9FF" stop-opacity="0"/></radialGradient>'
         '</defs>',
         f'<rect width="{canvas_w}" height="{canvas_h}" rx="12" fill="url(#hbg)"/>',
         f'<circle cx="{canvas_w * .74:.1f}" cy="{canvas_h * .42:.1f}" r="240" fill="url(#aura)"/>',
@@ -128,7 +128,7 @@ def render(data):
         f'fill="none" stroke="{FRAME}" stroke-width="1" stroke-opacity="1"/>',
         f'<line x1="0" y1="{TITLEBAR_H}" x2="{canvas_w}" y2="{TITLEBAR_H}" stroke="{FRAME}" stroke-opacity="1"/>',
     ]
-    for i, dotcol in enumerate(["#D7FF3F", "#FF633C", "#6376FF"]):
+    for i, dotcol in enumerate(["#66F7FF", "#29A9FF", "#8B7CFF"]):
         parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
     parts.append(f'<text x="{canvas_w/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
                      f'text-anchor="middle">musa@neural-node: ~/activity_stream --live</text>')
