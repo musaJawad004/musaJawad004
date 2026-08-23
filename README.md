@@ -1,12 +1,12 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=8">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/light.svg?v=8">
-  <img alt="MUSA.EXE — building brains for apps" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/dark.svg?v=8" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/dark.svg?v=9">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/light.svg?v=9">
+  <img alt="MUSA.EXE — building brains for apps" src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/dark.svg?v=9" width="100%">
 </picture>
 
-[`ENTER PORTFOLIO`](https://musadev.vercel.app/) &nbsp;·&nbsp; [`LINKEDIN SIGNAL`](https://www.linkedin.com/in/muhammadmusadev/) &nbsp;·&nbsp; [`OPEN CHANNEL`](mailto:musaJawad004@gmail.com)
+[`ENTER PORTFOLIO`](https://itsmusa.vercel.app/) &nbsp;·&nbsp; [`LINKEDIN SIGNAL`](https://www.linkedin.com/in/muhammadmusadev/) &nbsp;·&nbsp; [`OPEN CHANNEL`](mailto:musaJawad004@gmail.com)
 
 </div>
 
@@ -16,9 +16,9 @@
 -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-light.svg?v=3">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/status-dark.svg?v=3" alt="System online — agents, RAG memory, and mobile AI channels loaded" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/status-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/status-light.svg?v=4">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/status-dark.svg?v=4" alt="System online — agents, RAG memory, and mobile AI channels loaded" width="100%">
 </picture>
 
 ## `> whoami`
@@ -34,9 +34,9 @@ I build apps that **think, remember, and occasionally surprise me**.
 > The mission: make AI feel less like a feature and more like a living part of the product.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=3">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-light.svg?v=4">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4" alt="" width="100%">
 </picture>
 
 ## `~/current_experiments`
@@ -49,37 +49,37 @@ I build apps that **think, remember, and occasionally surprise me**.
 ```
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=3">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-light.svg?v=4">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4" alt="" width="100%">
 </picture>
 
 ## `~/neural_toolbelt`
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/stack-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/stack-light.svg?v=2">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/stack-dark.svg?v=2" alt="Neural toolbelt: AI agents, RAG, LLMs, mobile development, backend systems, databases, TypeScript and Python" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/stack-dark.svg?v=3">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/stack-light.svg?v=3">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/stack-dark.svg?v=3" alt="Neural toolbelt: AI agents, RAG, LLMs, mobile development, backend systems, databases, TypeScript and Python" width="100%">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=3">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-light.svg?v=4">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4" alt="" width="100%">
 </picture>
 
 ## `~/signal_output`
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-light.svg?v=3">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/achievements-dark.svg?v=3" alt="Signal output: 10+ apps released, 10K+ humans reached, 5+ models trained, 3 years exploring" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/achievements-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/achievements-light.svg?v=4">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/achievements-dark.svg?v=4" alt="Signal output: 10+ apps released, 10K+ humans reached, 5+ models trained, 3 years exploring" width="100%">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-light.svg?v=3">
-  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/dev/divider-dark.svg?v=3" alt="" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-light.svg?v=4">
+  <img src="https://raw.githubusercontent.com/musaJawad004/musaJawad004/v2/divider-dark.svg?v=4" alt="" width="100%">
 </picture>
 
 ## `~/activity_stream`
@@ -94,7 +94,7 @@ I build apps that **think, remember, and occasionally surprise me**.
 
 **Got a strange AI idea, an app that needs a brain, or something fun to build?**
 
-[`SEND A SIGNAL`](mailto:musaJawad004@gmail.com) &nbsp;·&nbsp; [`SEE THE LAB`](https://musadev.vercel.app/) &nbsp;·&nbsp; [`CONNECT`](https://www.linkedin.com/in/muhammadmusadev/)
+[`SEND A SIGNAL`](mailto:musaJawad004@gmail.com) &nbsp;·&nbsp; [`SEE THE LAB`](https://itsmusa.vercel.app/) &nbsp;·&nbsp; [`CONNECT`](https://www.linkedin.com/in/muhammadmusadev/)
 
 <sub>human-made · machine-assisted · curiosity-powered</sub>
 
