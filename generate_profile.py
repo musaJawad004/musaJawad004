@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate the NEURO//MUSA V2 GitHub profile artwork.
+"""Generate the BIOCOMPUTE//MUSA V2 GitHub profile artwork.
 
-The profile is intentionally closer to a fictional AI interface than a resume:
-neural paths, synthetic signals, playful system language, and a vivid three-color
-identity. Fonts are embedded so every panel renders consistently on GitHub.
+The profile behaves like a living laboratory specimen: warm black, acid green,
+signal orange, cobalt, scan lines, neural traces, and asymmetric instrument
+layouts. Fonts are embedded so every panel renders consistently on GitHub.
 """
 
 import base64
@@ -15,12 +15,12 @@ HERE = Path(__file__).parent
 FONTS = HERE / "fonts"
 
 # --------------------------------------------------------------- BRAND / COPY
-NAME = "MUSA.EXE"
-EYEBROW = "HUMAN // AI SYSTEMS BUILDER"
-TAGLINE = "BUILDING BRAINS FOR APPS"
+NAME = "MUSA//004"
+EYEBROW = "BIO-COMPUTE LAB / HUMAN NODE 004"
+TAGLINE = "I TEACH APPS TO THINK"
 DESC = "Agents that act. RAG that remembers. Mobile experiences that feel alive."
-STATUS = "NEURAL LINK: ACTIVE"
-COMPANY = "CURRENT NODE: GLIXEN TECHNOLOGIES"
+STATUS = "SPECIMEN AWAKE"
+COMPANY = "HOST LAB: GLIXEN TECHNOLOGIES"
 HANDLE = "@MUHAMMADMUSADEV"
 
 STATS = [
@@ -32,16 +32,16 @@ STATS = [
 
 THEMES = {
     "dark": {
-        "bg": "#05050A", "surface": "#0B0D14", "display": "#F7FBFF",
-        "primary": "#D8E5FF", "secondary": "#8091A7", "border": "#1C2740",
-        "grid": "#11182A", "cyan": "#5FFBF1", "violet": "#8B5CF6",
-        "pink": "#FF4FD8", "lime": "#B6FF6A",
+        "bg": "#0D0C09", "surface": "#15130F", "display": "#F3EEDF",
+        "primary": "#D8D0BC", "secondary": "#8C8474", "border": "#393326",
+        "grid": "#211E17", "cyan": "#D7FF3F", "violet": "#FF633C",
+        "pink": "#6376FF", "lime": "#F5BF3B",
     },
     "light": {
-        "bg": "#F8FAFF", "surface": "#FFFFFF", "display": "#111225",
-        "primary": "#27304A", "secondary": "#66708A", "border": "#D8DFF2",
-        "grid": "#E9ECF8", "cyan": "#007D91", "violet": "#6D3CE7",
-        "pink": "#D31EB7", "lime": "#4C8F00",
+        "bg": "#F0EBDD", "surface": "#F8F3E7", "display": "#17140E",
+        "primary": "#393328", "secondary": "#746C5C", "border": "#C6BDA9",
+        "grid": "#DDD5C4", "cyan": "#5A7900", "violet": "#C83C1B",
+        "pink": "#2E43D6", "lime": "#9A6500",
     },
 }
 
@@ -78,12 +78,15 @@ def defs(c, prefix="n"):
     <stop offset="1" stop-color="{c['pink']}"/>
   </linearGradient>
   <radialGradient id="{prefix}-aura">
-    <stop offset="0" stop-color="{c['violet']}" stop-opacity=".2"/>
+    <stop offset="0" stop-color="{c['violet']}" stop-opacity=".16"/>
     <stop offset="1" stop-color="{c['violet']}" stop-opacity="0"/>
   </radialGradient>
   <pattern id="{prefix}-grid" width="24" height="24" patternUnits="userSpaceOnUse">
     <path d="M24 0H0V24" fill="none" stroke="{c['grid']}" stroke-width="1"/>
     <circle cx="1" cy="1" r="1" fill="{c['border']}"/>
+  </pattern>
+  <pattern id="{prefix}-scan" width="8" height="8" patternUnits="userSpaceOnUse">
+    <path d="M0 7.5H8" stroke="{c['grid']}" stroke-width="1"/>
   </pattern>
   <filter id="{prefix}-glow" x="-80%" y="-80%" width="260%" height="260%">
     <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -94,8 +97,10 @@ def defs(c, prefix="n"):
 
 def frame(width, height, c):
     return (
-        f'<path d="M18 42V18H42 M{width-42} 18h24v24 M18 {height-42}v24h24 '
-        f'M{width-42} {height-18}h24v-24" fill="none" stroke="{c["border"]}" stroke-width="1.3"/>'
+        f'<path d="M18 58V18H72 M{width-90} 18h72v40 M18 {height-58}v40h54 '
+        f'M{width-90} {height-18}h72v-40" fill="none" stroke="{c["border"]}" stroke-width="1.3"/>'
+        f'<path d="M82 18h6m8 0h18m8 0h3 M{width-126} {height-18}h-6m-8 0h-18m-8 0h-3" '
+        f'stroke="{c["cyan"]}" stroke-width="2"/>'
     )
 
 
@@ -110,10 +115,15 @@ def neural_map(c):
              (3, 5), (3, 7), (4, 6), (4, 7), (5, 7), (6, 7)]
     out = [
         '<circle cx="835" cy="174" r="170" fill="url(#hero-aura)"/>',
-        f'<circle cx="835" cy="174" r="122" fill="none" stroke="{c["border"]}" stroke-dasharray="2 12">'
-        '<animateTransform attributeName="transform" type="rotate" from="0 835 174" to="360 835 174" dur="28s" repeatCount="indefinite"/></circle>',
-        f'<circle cx="835" cy="174" r="82" fill="none" stroke="{c["border"]}" stroke-dasharray="24 16">'
-        '<animateTransform attributeName="transform" type="rotate" from="360 835 174" to="0 835 174" dur="18s" repeatCount="indefinite"/></circle>',
+        f'<path d="M724 131C742 72 801 48 858 62C921 77 954 126 946 184C938 245 888 282 827 280C765 278 715 235 716 178C716 160 719 145 724 131Z" fill="none" stroke="{c["border"]}" stroke-width="1.2"/>',
+        f'<path d="M744 142C757 96 804 76 851 87C897 98 927 136 919 181C912 226 874 253 828 251C783 249 745 218 740 178C738 164 740 152 744 142Z" fill="none" stroke="{c["violet"]}" stroke-opacity=".45" stroke-dasharray="4 9">'
+        '<animate attributeName="stroke-dashoffset" values="26;0" dur="3s" repeatCount="indefinite"/></path>',
+        f'<path d="M766 149C776 119 809 103 841 111C876 120 897 147 891 180C885 214 856 233 823 226C791 219 766 193 763 167C762 160 763 154 766 149Z" fill="none" stroke="{c["cyan"]}" stroke-opacity=".55"/>',
+        f'<path d="M694 174H970 M835 48V288" stroke="{c["border"]}" stroke-width=".8" stroke-dasharray="3 8"/>',
+        f'<rect x="704" y="76" width="260" height="2" fill="{c["cyan"]}" opacity=".5">'
+        '<animate attributeName="y" values="76;270;76" dur="4.4s" repeatCount="indefinite"/></rect>',
+        f'<text x="712" y="68" font-family="{SM}" font-size="8" letter-spacing="1.4" fill="{c["secondary"]}">CORTEX SCAN / 004</text>',
+        f'<text x="958" y="284" text-anchor="end" font-family="{SM}" font-size="8" letter-spacing="1.2" fill="{c["secondary"]}">08 SYNAPSES / LIVE</text>',
     ]
     for a, b in edges:
         x1, y1, _, _ = nodes[a]
@@ -134,8 +144,8 @@ def neural_map(c):
             f'<animate attributeName="opacity" values="1;.35;1" dur="{1.4+index*.16:.2f}s" repeatCount="indefinite"/></circle>'
         )
     out.append(
-        f'<text x="835" y="177" text-anchor="middle" font-family="{SM}" font-size="10" '
-        f'letter-spacing="2" fill="{c["display"]}">THINK / BUILD / SHIP</text>'
+        f'<text x="835" y="177" text-anchor="middle" font-family="{SM}" font-size="9" '
+        f'letter-spacing="1.6" fill="{c["display"]}">LIVE CORTEX 004</text>'
     )
     return "\n".join(out)
 
@@ -147,6 +157,7 @@ def render(c):
         defs(c, "hero"),
         f'<rect width="{width}" height="{height}" fill="{c["bg"]}"/>',
         '<rect width="1000" height="390" fill="url(#hero-grid)" opacity=".8"/>',
+        '<rect width="1000" height="390" fill="url(#hero-scan)" opacity=".28"/>',
         frame(width, height, c), neural_map(c),
         f'<text x="54" y="49" font-family="{SM}" font-size="11" letter-spacing="2.4" fill="{c["secondary"]}">{escape(EYEBROW)}</text>',
         f'<circle cx="784" cy="44" r="4" fill="{c["lime"]}" filter="url(#hero-glow)"><animate attributeName="opacity" values="1;.25;1" dur="1.3s" repeatCount="indefinite"/></circle>',
@@ -154,7 +165,7 @@ def render(c):
         f'<text x="50" y="135" font-family="{DOTO}" font-size="76" font-weight="700" letter-spacing="1" fill="url(#hero-signal)">{escape(NAME)}</text>',
         f'<text x="54" y="176" font-family="{SM}" font-size="15" letter-spacing="3" fill="{c["display"]}">{escape(TAGLINE)}</text>',
         f'<text x="54" y="207" font-family="{SG}" font-size="16" fill="{c["primary"]}">{escape(DESC)}</text>',
-        f'<text x="54" y="238" font-family="{SM}" font-size="10" letter-spacing="1.5" fill="{c["secondary"]}">NOT A BOT. PROBABLY.</text>',
+        f'<text x="54" y="238" font-family="{SM}" font-size="10" letter-spacing="1.5" fill="{c["secondary"]}">UNSTABLE BY DESIGN / USEFUL ON PURPOSE</text>',
         '<line x1="54" y1="276" x2="946" y2="276" stroke="url(#hero-signal)" stroke-width="1.5"/>',
     ]
     cell_width = 892 / len(STATS)
@@ -178,25 +189,30 @@ def render(c):
 
 def render_status(c):
     bars = []
-    for i, bar_height in enumerate([8, 16, 28, 20, 38, 24, 32, 14, 26, 10]):
+    for i, bar_height in enumerate([10, 28, 16, 38, 22, 44, 18, 32, 12]):
         bars.append(
-            f'<rect x="{795+i*13}" y="{34-bar_height/2:.1f}" width="6" height="{bar_height}" rx="3" fill="url(#status-signal)" opacity="{.35 + i*.055:.2f}">'
-            f'<animate attributeName="height" values="{bar_height};{max(6, 44-bar_height)};{bar_height}" dur="{1.1+i*.09:.2f}s" repeatCount="indefinite"/></rect>'
+            f'<rect x="{842+i*12}" y="{67-bar_height}" width="5" height="{bar_height}" fill="{c[["cyan", "violet", "pink"][i%3]]}" opacity="{.42 + i*.055:.2f}">'
+            f'<animate attributeName="height" values="{bar_height};{max(7, 48-bar_height)};{bar_height}" dur="{1.0+i*.11:.2f}s" repeatCount="indefinite"/></rect>'
         )
     return "\n".join([
-        '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="68" viewBox="0 0 1000 68">', defs(c, "status"),
-        f'<rect x="1" y="1" width="998" height="66" rx="9" fill="{c["surface"]}" stroke="{c["border"]}"/>',
-        f'<circle cx="28" cy="34" r="5" fill="{c["lime"]}" filter="url(#status-glow)"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle>',
-        f'<text x="44" y="39" font-family="{SM}" font-size="12" letter-spacing="1.5" fill="{c["display"]}">SYSTEM ONLINE</text>',
-        f'<line x1="188" y1="17" x2="188" y2="51" stroke="{c["border"]}"/>',
-        f'<text x="213" y="30" font-family="{SM}" font-size="9" letter-spacing="1.5" fill="{c["secondary"]}">LOADED CHANNELS</text>',
-        f'<text x="213" y="47" font-family="{SM}" font-size="11" fill="{c["cyan"]}">AGENTS</text>',
-        f'<text x="295" y="47" font-family="{SM}" font-size="11" fill="{c["violet"]}">RAG MEMORY</text>',
-        f'<text x="414" y="47" font-family="{SM}" font-size="11" fill="{c["pink"]}">MOBILE AI</text>',
-        f'<text x="555" y="39" font-family="{SM}" font-size="10" letter-spacing="1.4" fill="{c["secondary"]}">MODE:</text>',
-        f'<text x="604" y="39" font-family="{SM}" font-size="11" letter-spacing="1.4" fill="{c["display"]}">BUILD / BREAK / LEARN</text>',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="92" viewBox="0 0 1000 92">', defs(c, "status"),
+        f'<path d="M1 1H978L999 22V91H22L1 70Z" fill="{c["surface"]}" stroke="{c["border"]}"/>',
+        f'<path d="M1 1H214" stroke="{c["cyan"]}" stroke-width="4"/><path d="M214 1H350" stroke="{c["violet"]}" stroke-width="4"/><path d="M350 1H999" stroke="{c["border"]}" stroke-width="4"/>',
+        f'<rect x="22" y="26" width="9" height="9" fill="{c["cyan"]}" filter="url(#status-glow)"><animate attributeName="opacity" values="1;.18;1" dur="1.2s" repeatCount="indefinite"/></rect>',
+        f'<text x="44" y="31" font-family="{SM}" font-size="8" letter-spacing="1.7" fill="{c["secondary"]}">BIOCOMPUTE BUS</text>',
+        f'<text x="44" y="54" font-family="{SM}" font-size="13" letter-spacing="1.3" fill="{c["display"]}">NODE 004 / AWAKE</text>',
+        f'<text x="44" y="72" font-family="{SM}" font-size="8" letter-spacing="1.2" fill="{c["violet"]}">HUMAN-IN-THE-LOOP</text>',
+        f'<line x1="224" y1="16" x2="224" y2="76" stroke="{c["border"]}"/>',
+        f'<text x="250" y="27" font-family="{SM}" font-size="8" letter-spacing="1.6" fill="{c["secondary"]}">ACTIVE PROCESSES</text>',
+        f'<rect x="250" y="39" width="5" height="5" fill="{c["cyan"]}"/><text x="264" y="46" font-family="{SM}" font-size="10" fill="{c["display"]}">AGENT LOOP</text>',
+        f'<rect x="368" y="39" width="5" height="5" fill="{c["violet"]}"/><text x="382" y="46" font-family="{SM}" font-size="10" fill="{c["display"]}">RAG MEMORY</text>',
+        f'<rect x="492" y="39" width="5" height="5" fill="{c["pink"]}"/><text x="506" y="46" font-family="{SM}" font-size="10" fill="{c["display"]}">MOBILE CORE</text>',
+        f'<path d="M250 66h54l9-11 12 22 12-17 11 6h62l7-6 9 6h72l9-18 10 29 12-20 10 9h92" fill="none" stroke="{c["border"]}" stroke-width="1.2"/>',
+        '<path d="M250 66h54l9-11 12 22 12-17 11 6h62l7-6 9 6h72l9-18 10 29 12-20 10 9h92" fill="none" stroke="url(#status-signal)" stroke-width="2" stroke-dasharray="50 490"><animate attributeName="stroke-dashoffset" values="0;-540" dur="2.8s" repeatCount="indefinite"/></path>',
+        f'<line x1="760" y1="16" x2="760" y2="76" stroke="{c["border"]}"/>',
+        f'<text x="785" y="28" font-family="{SM}" font-size="8" letter-spacing="1.4" fill="{c["secondary"]}">SIGNAL DENSITY</text>',
         *bars,
-        f'<text x="948" y="39" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1" fill="{c["secondary"]}">SIGNAL 98%</text>',
+        f'<text x="972" y="81" text-anchor="end" font-family="{SM}" font-size="8" letter-spacing="1.2" fill="{c["secondary"]}">98.4% / LIVE</text>',
         '</svg>',
     ])
 
@@ -222,17 +238,17 @@ def render_stack(c):
     ]
     parts = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="322" viewBox="0 0 1000 322">', defs(c, "stack"),
-        f'<rect x="1" y="1" width="998" height="320" rx="12" fill="{c["surface"]}" stroke="{c["border"]}"/>',
-        '<rect x="1" y="1" width="998" height="320" rx="12" fill="url(#stack-grid)" opacity=".45"/>',
-        f'<text x="32" y="38" font-family="{DOTO}" font-size="22" font-weight="650" letter-spacing="2" fill="{c["display"]}">NEURAL TOOLBELT</text>',
-        f'<text x="968" y="36" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">06 MODULES LOADED</text>',
+        f'<path d="M1 1H970L999 30V321H30L1 292Z" fill="{c["surface"]}" stroke="{c["border"]}"/>',
+        '<path d="M1 1H970L999 30V321H30L1 292Z" fill="url(#stack-grid)" opacity=".45"/>',
+        f'<text x="32" y="38" font-family="{DOTO}" font-size="22" font-weight="650" letter-spacing="2" fill="{c["display"]}">SPECIMEN INVENTORY</text>',
+        f'<text x="968" y="36" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">06 MODULES / BIOCOMPUTE LAB</text>',
         '<line x1="32" y1="55" x2="968" y2="55" stroke="url(#stack-signal)" stroke-width="1"/>',
     ]
     for i, (number, label, tech, color) in enumerate(modules):
         x = 32 + (i % 2) * 476
         y = 76 + (i // 2) * 76
         parts.extend([
-            f'<rect x="{x}" y="{y}" width="450" height="58" rx="8" fill="{c["bg"]}" stroke="{c["border"]}"/>',
+            f'<path d="M{x} {y+9}L{x+9} {y}H{x+450}V{y+49}L{x+441} {y+58}H{x}Z" fill="{c["bg"]}" stroke="{c["border"]}"/>',
             f'<circle cx="{x+22}" cy="{y+29}" r="7" fill="{c[color]}" opacity=".18"><animate attributeName="r" values="7;12;7" dur="{1.7+i*.2:.2f}s" repeatCount="indefinite"/></circle>',
             f'<circle cx="{x+22}" cy="{y+29}" r="3" fill="{c[color]}"/>',
             f'<text x="{x+42}" y="{y+22}" font-family="{SM}" font-size="9" letter-spacing="1.5" fill="{c[color]}">{number} / {label}</text>',
@@ -240,7 +256,7 @@ def render_stack(c):
         ])
     parts.extend([
         f'<text x="32" y="302" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">STACK CHANGES. CURIOSITY DOESN\'T.</text>',
-        f'<text x="968" y="302" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">READY FOR NEXT EXPERIMENT →</text>', '</svg>',
+        f'<text x="968" y="302" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">READY FOR NEXT EXPERIMENT / 004</text>', '</svg>',
     ])
     return "\n".join(parts)
 
@@ -254,15 +270,15 @@ def render_achievements(c):
     ]
     parts = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="250" viewBox="0 0 1000 250">', defs(c, "impact"),
-        f'<rect x="1" y="1" width="998" height="248" rx="12" fill="{c["surface"]}" stroke="{c["border"]}"/>',
-        f'<text x="32" y="38" font-family="{DOTO}" font-size="22" font-weight="650" letter-spacing="2" fill="{c["display"]}">SIGNAL OUTPUT</text>',
+        f'<path d="M1 1H978L999 22V249H22L1 228Z" fill="{c["surface"]}" stroke="{c["border"]}"/>',
+        f'<text x="32" y="38" font-family="{DOTO}" font-size="22" font-weight="650" letter-spacing="2" fill="{c["display"]}">FIELD RESULTS</text>',
         f'<text x="968" y="36" text-anchor="end" font-family="{SM}" font-size="9" letter-spacing="1.4" fill="{c["secondary"]}">REAL PRODUCTS &gt; PRETTY DEMOS</text>',
         '<line x1="32" y1="55" x2="968" y2="55" stroke="url(#impact-signal)"/>',
     ]
     for i, (value, label, sub, color) in enumerate(cards):
         x = 32 + i * 236
         parts.extend([
-            f'<rect x="{x}" y="77" width="220" height="120" rx="10" fill="{c["bg"]}" stroke="{c["border"]}"/>',
+            f'<path d="M{x} 87L{x+10} 77H{x+220}V187L{x+210} 197H{x}Z" fill="{c["bg"]}" stroke="{c["border"]}"/>',
             f'<path d="M{x+16} 93h24" stroke="{c[color]}" stroke-width="3"/>',
             f'<text x="{x+16}" y="139" font-family="{DOTO}" font-size="34" font-weight="700" fill="{c[color]}">{value}</text>',
             f'<text x="{x+16}" y="165" font-family="{SM}" font-size="10" letter-spacing="1.2" fill="{c["display"]}">{label}</text>',
@@ -283,7 +299,7 @@ def main():
         (HERE / f"divider-{theme}.svg").write_text(render_divider(colors), encoding="utf-8")
         (HERE / f"stack-{theme}.svg").write_text(render_stack(colors), encoding="utf-8")
         (HERE / f"achievements-{theme}.svg").write_text(render_achievements(colors), encoding="utf-8")
-        print(f"wrote {theme} NEURO//MUSA set")
+        print(f"wrote {theme} BIOCOMPUTE//MUSA set")
 
 
 if __name__ == "__main__":
