@@ -88,7 +88,7 @@ I am **Muhammad Musa**, an **AI Engineer and LLM Engineer in Pakistan** building
 
 ## `~/activity_stream`
 
-<img src="./cipher-activity.svg" width="100%" alt="Muhammad Musa GitHub contribution activity stream, refreshed automatically" />
+<img src="https://cdn.jsdelivr.net/gh/musaJawad004/musaJawad004@main/cipher-activity.svg" width="100%" alt="Muhammad Musa GitHub contribution activity stream, refreshed automatically" />
 
 <br>
 
